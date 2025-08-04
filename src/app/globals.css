@@ -2,6 +2,15 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  --brand-purple: #a78bfa;
+  --brand-purple-dark: #BD75F4;
+  --brand-purple-light: #c4b5fd;
+  --brand-purple-darker: #2A1A36;
+}
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
