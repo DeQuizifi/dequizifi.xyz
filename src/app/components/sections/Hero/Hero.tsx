@@ -1,11 +1,9 @@
-import CryptoSVG from "./CryptoSVG";
-import { HiOutlineBolt } from "react-icons/hi2";
-import { HiOutlineStar } from "react-icons/hi2";
+import { HiOutlineBolt, HiOutlineStar } from "react-icons/hi2";
 
 export default function Hero() {
     return(
         <section className="flex flex-col items-center justify-center min-h-screen bg-purple-50">
-            <CryptoSVG />
+
             <div className="flex items-center gap-1 space-between mb-6 mt-4 px-4 py-1 rounded-full text-xs bg-violet-50 text-violet-600 border border-violet-200 font-semibold shadow">
                 <span><HiOutlineStar /></span> Farcaster Native DeFi Education
             </div>
