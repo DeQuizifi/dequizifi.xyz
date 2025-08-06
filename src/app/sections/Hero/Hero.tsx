@@ -41,8 +41,6 @@ export default function Hero() {
                     <span className="text-gray-500 text-sm">Active Learners</span>
                 </div>
             </div>
-
-
         </section>
     )
 }

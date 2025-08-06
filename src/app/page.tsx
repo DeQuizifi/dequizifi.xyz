@@ -1,9 +1,9 @@
-import Hero from "./components/sections/Hero/Hero";
+import Hero from '@/app/sections/Hero/Hero';
 
-export default function HomePage() {
-    return (
-        <main>
-            <Hero />
-        </main>
-    );
+export default function Home() {
+  return (
+    <main>
+      <Hero />
+    </main>
+  );
 }
