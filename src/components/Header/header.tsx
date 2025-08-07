@@ -5,10 +5,10 @@ type HeaderProps = {
 
 export default function Header({title,subtitle}: HeaderProps) {
     return (
-        <div className="bg-sidebar p-4">
+        <div className="bg-sidebar-primary-foreground p-4">
             <header>
                 <h1 className="
-                text-5xl 
+                text-4xl 
                 font-bold 
                 text-center 
                 bg-gradient-to-r
@@ -16,7 +16,7 @@ export default function Header({title,subtitle}: HeaderProps) {
                 to-popover 
                 bg-clip-text 
                 text-transparent 
-                mb-3
+                mb-1
   ">{title}</h1>
                 {subtitle && 
                 <p className="text-xl text-center text-chart-5 font-sans">{subtitle}</p>}
