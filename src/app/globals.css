@@ -60,20 +60,27 @@
   --shadow-2xl: 0px 2px 3px 0px hsl(0 0% 0% / 0.4);
   --tracking-normal: -0.025em;
   --spacing: 0.27rem;
-  /* Footer section custom variables */
+  /* About section custom variables */
+  --color-about-badge-bg: hsl(266, 100%, 97%);
+  --color-about-badge-text: hsl(263, 85%, 60%);
+  --color-about-description: #6b7280;
   --color-footer-gradient-from: #e08bfa;
-  --color-footer-gradient-to: #D1A1FF;
-  --color-footer-brand-gradient-from: #A78BFA;
-  --color-footer-brand-gradient-to: #E9D8FD;
-  --color-footer-badge-border: #E9D8FD;
-  --color-footer-badge-bg: #F6F3FF;
-  --color-footer-badge-text: #A78BFA;
+  --color-footer-gradient-to: #d1a1ff;
+  --color-footer-brand-gradient-from: #a78bfa;
+  --color-footer-brand-gradient-to: #e9d8fd;
+  --color-footer-badge-border: #e9d8fd;
+  --color-footer-badge-bg: #f6f3ff;
+  --color-footer-badge-text: #a78bfa;
   --color-footer-heart: #ef4444;
   --color-footer-icon: #fff;
 }
 
 .footer-brand-gradient {
-  background: linear-gradient(90deg, var(--color-footer-brand-gradient-from), var(--color-footer-brand-gradient-to));
+  background: linear-gradient(
+    90deg,
+    var(--color-footer-brand-gradient-from),
+    var(--color-footer-brand-gradient-to)
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -129,6 +136,10 @@
     0px 1px 2px -1px hsl(0 0% 0% / 0.16);
   --shadow-md: 0px 2px 3px 0px hsl(0 0% 0% / 0.16),
     0px 2px 4px -1px hsl(0 0% 0% / 0.16);
+  /* About section custom variables (dark mode) */
+  --color-about-badge-bg: hsl(266, 100%, 12%);
+  --color-about-badge-text: hsl(263, 85%, 70%);
+  --color-about-description: #9ca3af;
   --shadow-lg: 0px 2px 3px 0px hsl(0 0% 0% / 0.16),
     0px 4px 6px -1px hsl(0 0% 0% / 0.16);
   --shadow-xl: 0px 2px 3px 0px hsl(0 0% 0% / 0.16),
@@ -147,7 +158,11 @@
 }
 
 .dark .footer-brand-gradient {
-  background: linear-gradient(90deg, var(--color-footer-brand-gradient-from), var(--color-footer-brand-gradient-to));
+  background: linear-gradient(
+    90deg,
+    var(--color-footer-brand-gradient-from),
+    var(--color-footer-brand-gradient-to)
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

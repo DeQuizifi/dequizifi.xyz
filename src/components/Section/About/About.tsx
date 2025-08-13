@@ -3,16 +3,22 @@ import { BookOpen, TrendingUp, Heart } from "lucide-react";
 
 export default function About() {
   return (
-    <section className="w-full bg-[hsl(263_100%_95%)] flex flex-col items-center py-20 px-4">
+    <section className="w-full bg-[var(--background)] flex flex-col items-center py-20 px-4">
       <div className="mb-4 flex items-center">
-        <span className="bg-violet-100 text-violet-700 px-3 py-1 rounded-full text-xs font-semibold tracking-wide">
+        <span className="bg-[var(--color-about-badge-bg)] text-[var(--color-about-badge-text)] px-3 py-1 rounded-full text-xs font-semibold tracking-wide">
           ⚡ Perfect For
         </span>
       </div>
-      <h2 className="text-[42px] leading-tight md:text-5xl font-extrabold text-center bg-gradient-to-r from-violet-600 to-violet-400 bg-clip-text text-transparent mb-4">
+      <h2
+        className="text-[42px] leading-tight md:text-5xl font-extrabold text-center bg-gradient-to-r bg-clip-text text-transparent mb-4"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, var(--color-hero-gradient-from), var(--color-hero-gradient-to))",
+        }}
+      >
         Who Is DeQuizify For?
       </h2>
-      <p className="text-gray-500 text-center mb-14 max-w-3xl text-sm md:text-base leading-relaxed">
+      <p className="text-[var(--color-about-description)] text-center mb-14 max-w-3xl text-sm md:text-base leading-relaxed">
         Built for the modern crypto community that values both learning depth
         and design excellence.
       </p>
