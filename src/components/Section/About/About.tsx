@@ -1,5 +1,4 @@
 import CustomCard from "@/components/CustomCard/custom-card";
-import CustomCardTwo from "@/components/CustomCard/customcardtwo";
 
 export default function About() {
   return (
@@ -47,7 +46,7 @@ export default function About() {
           buttonlabel="Start Your Journey"
           icon="TrendingUp"
         />
-        <CustomCardTwo
+        <CustomCard
           title="Farcaster Power Users"
           subtitle="Design quality meets social features"
           description="Active community members who value both aesthetic excellence and meaningful social learning experiences."

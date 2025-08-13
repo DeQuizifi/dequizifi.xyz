@@ -90,6 +90,18 @@
   --color-customcard-button-bg: #fff;
   --color-customcard-button-border: #ddd6fe;
   --color-customcard-button-hover-bg: #f5f3ff;
+  /* CTA section custom variables */
+  --color-cta-bg: #fff;
+  --color-cta-border: #e9e3fc;
+  --color-cta-title: #111827;
+  --color-cta-description: #4b5563;
+  --color-cta-primary-bg: #a259ff;
+  --color-cta-primary-hover-bg: #7c3aed;
+  --color-cta-primary-text: #fff;
+  --color-cta-secondary-bg: #fff;
+  --color-cta-secondary-text: #111827;
+  --color-cta-secondary-border: #e5e7eb;
+  --color-cta-secondary-hover-bg: #f9fafb;
 }
 
 .footer-brand-gradient {
@@ -182,6 +194,18 @@
   --color-customcard-gradient-from: #a78bfa;
   --color-customcard-gradient-to: #7c3aed;
   --color-customcard-icon: #fff;
+  /* CTA section custom variables (dark mode) */
+  --color-cta-bg: #18181b;
+  --color-cta-border: #7c3aed;
+  --color-cta-title: #f3f4f6;
+  --color-cta-description: #9ca3af;
+  --color-cta-primary-bg: #7c3aed;
+  --color-cta-primary-hover-bg: #a259ff;
+  --color-cta-primary-text: #fff;
+  --color-cta-secondary-bg: #18181b;
+  --color-cta-secondary-text: #f3f4f6;
+  --color-cta-secondary-border: #7c3aed;
+  --color-cta-secondary-hover-bg: #27272a;
   --color-customcard-subtitle: #a78bfa;
   --color-customcard-description: #9ca3af;
   --color-customcard-feature-dot: #a78bfa;
@@ -189,6 +213,18 @@
   --color-customcard-button-bg: #18181b;
   --color-customcard-button-border: #7c3aed;
   --color-customcard-button-hover-bg: #27272a;
+  /* CTA section custom variables (dark mode) */
+  --color-cta-bg: #18181b;
+  --color-cta-border: #7c3aed;
+  --color-cta-title: #f3f4f6;
+  --color-cta-description: #9ca3af;
+  --color-cta-primary-bg: #7c3aed;
+  --color-cta-primary-hover-bg: #a259ff;
+  --color-cta-primary-text: #fff;
+  --color-cta-secondary-bg: #18181b;
+  --color-cta-secondary-text: #f3f4f6;
+  --color-cta-secondary-border: #7c3aed;
+  --color-cta-secondary-hover-bg: #27272a;
 }
 
 .dark .footer-brand-gradient {
