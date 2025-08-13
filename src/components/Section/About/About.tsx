@@ -1,5 +1,4 @@
 import CustomCard from "@/components/CustomCard/custom-card";
-import { BookOpen, TrendingUp, Heart } from "lucide-react";
 
 export default function About() {
   return (
@@ -33,7 +32,7 @@ export default function About() {
             "Confidence building",
           ]}
           buttonlabel="Start Your Journey"
-          IconComponent={BookOpen}
+          icon="BookOpen"
         />
         <CustomCard
           title="DeFi Practitioners"
@@ -45,7 +44,7 @@ export default function About() {
             "Professional network",
           ]}
           buttonlabel="Start Your Journey"
-          IconComponent={TrendingUp}
+          icon="TrendingUp"
         />
         <CustomCard
           title="Farcaster Power Users"
@@ -57,7 +56,7 @@ export default function About() {
             "Native integration",
           ]}
           buttonlabel="Start Your Journey"
-          IconComponent={Heart}
+          icon="Heart"
         />
       </div>
     </section>

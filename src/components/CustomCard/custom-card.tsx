@@ -1,3 +1,4 @@
+"use client";
 import {
   Card,
   CardContent,
@@ -5,9 +6,8 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-
-import { Brain } from "lucide-react"
+} from "@/components/ui/card";
+import * as LucideIcons from "lucide-react";
 
 type CustomCardProps = {
   title: string;
@@ -15,60 +15,94 @@ type CustomCardProps = {
   description: string;
   features?: string[];
   buttonlabel: string;
-  IconComponent?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
-}
+  icon?: keyof typeof LucideIcons;
+};
 
-export default function CustomCard({title, subtitle, description, features=[], buttonlabel, IconComponent = Brain}: CustomCardProps) {
-    return (
-        <div className="bg-white rounded-lg border border-gray-200 hover:border-violet-200 transition-colors">
-        <Card
-            className="
-                group
-                flex flex-col
-                w-full max-w-[320px]
-                h-full
-                transition
-                bg-white
-                border-0
-                text-gray-900
-                hover:bg-violet-50/30
-                cursor-pointer
-                shadow-none
-                font-sans
-                p-6
-            "
-        >
-            <CardHeader className="flex flex-col items-start gap-3 pt-0 pb-4 w-full px-0">
-                <div className="rounded-lg bg-gradient-to-br from-violet-600 to-violet-400 p-3 w-fit">
-                    <IconComponent className="w-6 h-6 text-white" />
-                </div>
-                <div className="space-y-2">
-                    <CardTitle className="text-xl font-bold text-gray-900">{title}</CardTitle>
-                    {subtitle && (
-                        <p className="text-sm font-medium text-violet-600">{subtitle}</p>
-                    )}
-                </div>
-            </CardHeader>
-            <CardContent className="px-0 pb-6 flex-1">
-                <CardDescription className="text-sm text-gray-600 mb-4 leading-relaxed">
-                    {description}
-                </CardDescription>
-                <ul className="list-none space-y-2 pl-0 text-sm">
-                     {features.map((feature, index) => (
-                     <li key={index} className="flex items-center gap-2">
-                      <span className="h-1.5 w-1.5 rounded-full bg-violet-500 inline-block flex-shrink-0" />
-                      <span className="text-gray-600">{feature}</span>
-                    </li>
-                    ))}
-                </ul>
-            </CardContent>
-            <CardFooter className="px-0 pt-0">
-                <button className="bg-white text-violet-700 text-sm font-medium px-4 py-2 rounded-lg border border-violet-200 hover:bg-violet-50 transition-colors w-full">
-                    {buttonlabel}
-                </button>
-            </CardFooter>
-        </Card>
+export default function CustomCard({
+  title,
+  subtitle,
+  description,
+  features = [],
+  buttonlabel,
+  icon = "Brain",
+}: CustomCardProps) {
+  const IconComponent = LucideIcons[icon] ?? LucideIcons["Brain"];
+  return (
+    <div
+      style={{
+        backgroundColor: "var(--color-customcard-bg)",
+        borderColor: "var(--color-customcard-border)",
+      }}
+      className="rounded-lg border transition-colors hover:border-[var(--color-customcard-border-hover)]"
+    >
+      <Card
+        style={{
+          backgroundColor: "var(--color-customcard-bg)",
+          color: "var(--color-customcard-text)",
+        }}
+        className="group flex h-full w-full max-w-[320px] cursor-pointer flex-col border-0 bg-transparent p-6 font-sans shadow-none transition hover:bg-[var(--color-customcard-hover-bg)]"
+      >
+        <CardHeader className="flex w-full flex-col items-start gap-3 px-0 pt-0 pb-4">
+          <div
+            className="w-fit rounded-lg p-3"
+            style={{
+              background:
+                "linear-gradient(to bottom right, var(--color-customcard-gradient-from), var(--color-customcard-gradient-to))",
+            }}
+          >
+            <IconComponent
+              className="h-6 w-6"
+              style={{ color: "var(--color-customcard-icon)" }}
+            />
+          </div>
+          <div className="space-y-2">
+            <CardTitle className="text-xl font-bold">{title}</CardTitle>
+            {subtitle && (
+              <p
+                className="text-sm font-medium"
+                style={{ color: "var(--color-customcard-subtitle)" }}
+              >
+                {subtitle}
+              </p>
+            )}
+          </div>
+        </CardHeader>
+        <CardContent className="flex-1 px-0 pb-6">
+          <CardDescription
+            className="mb-4 text-sm leading-relaxed"
+            style={{ color: "var(--color-customcard-description)" }}
+          >
+            {description}
+          </CardDescription>
+          <ul className="list-none space-y-2 pl-0 text-sm">
+            {features.map((feature, index) => (
+              <li key={index} className="flex items-center gap-2">
+                <span
+                  className="inline-block h-1.5 w-1.5 flex-shrink-0 rounded-full"
+                  style={{
+                    backgroundColor: "var(--color-customcard-feature-dot)",
+                  }}
+                />
+                <span style={{ color: "var(--color-customcard-description)" }}>
+                  {feature}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </CardContent>
+        <CardFooter className="px-0 pt-0">
+          <button
+            style={{
+              backgroundColor: "var(--color-customcard-button-bg)",
+              color: "var(--color-customcard-button-text)",
+              borderColor: "var(--color-customcard-button-border)",
+            }}
+            className="w-full rounded-lg border px-4 py-2 text-sm font-medium transition-colors hover:bg-[var(--color-customcard-button-hover-bg)]"
+          >
+            {buttonlabel}
+          </button>
+        </CardFooter>
+      </Card>
     </div>
-    )
-    
+  );
 }
