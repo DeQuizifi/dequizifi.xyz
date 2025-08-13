@@ -60,6 +60,23 @@
   --shadow-2xl: 0px 2px 3px 0px hsl(0 0% 0% / 0.4);
   --tracking-normal: -0.025em;
   --spacing: 0.27rem;
+  /* Footer section custom variables */
+  --color-footer-gradient-from: #e08bfa;
+  --color-footer-gradient-to: #D1A1FF;
+  --color-footer-brand-gradient-from: #A78BFA;
+  --color-footer-brand-gradient-to: #E9D8FD;
+  --color-footer-badge-border: #E9D8FD;
+  --color-footer-badge-bg: #F6F3FF;
+  --color-footer-badge-text: #A78BFA;
+  --color-footer-heart: #ef4444;
+  --color-footer-icon: #fff;
+}
+
+.footer-brand-gradient {
+  background: linear-gradient(90deg, var(--color-footer-brand-gradient-from), var(--color-footer-brand-gradient-to));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .dark {
@@ -117,6 +134,23 @@
   --shadow-xl: 0px 2px 3px 0px hsl(0 0% 0% / 0.16),
     0px 8px 10px -1px hsl(0 0% 0% / 0.16);
   --shadow-2xl: 0px 2px 3px 0px hsl(0 0% 0% / 0.4);
+  /* Footer section custom variables (dark mode) */
+  --color-footer-gradient-from: #7c3aed;
+  --color-footer-gradient-to: #a78bfa;
+  --color-footer-brand-gradient-from: #a78bfa;
+  --color-footer-brand-gradient-to: #6d28d9;
+  --color-footer-badge-border: #6d28d9;
+  --color-footer-badge-bg: #18181b;
+  --color-footer-badge-text: #a78bfa;
+  --color-footer-heart: #ef4444;
+  --color-footer-icon: #fff;
+}
+
+.dark .footer-brand-gradient {
+  background: linear-gradient(90deg, var(--color-footer-brand-gradient-from), var(--color-footer-brand-gradient-to));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 @theme inline {

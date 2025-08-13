@@ -8,12 +8,22 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="md:col-span-2 space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-14 h-14 bg-gradient-to-br from-[#e08bfa] to-[#D1A1FF] rounded-2xl flex items-center justify-center">
-                <Sparkles className="w-8 h-8 text-white" />
+              <div
+                className="w-14 h-14 bg-gradient-to-br rounded-2xl flex items-center justify-center"
+                style={{
+                  backgroundImage: `linear-gradient(135deg, var(--color-footer-gradient-from), var(--color-footer-gradient-to))`,
+                }}
+              >
+                <Sparkles
+                  className="w-8 h-8"
+                  style={{ color: "var(--color-footer-icon)" }}
+                />
               </div>
               <span
-                className="ml-4 text-4xl font-extrabold bg-gradient-to-r from-[#A78BFA] to-[#E9D8FD] bg-clip-text text-transparent"
-                style={{ letterSpacing: "-1px" }}
+                className="ml-4 text-4xl font-extrabold footer-brand-gradient"
+                style={{
+                  letterSpacing: "-1px",
+                }}
               >
                 DeQuizify
               </span>
@@ -24,7 +34,14 @@ export default function Footer() {
               experiences.
             </p>
             <div className="inline-block">
-              <span className="rounded-full border border-[#E9D8FD] bg-[#F6F3FF] px-5 py-1 text-sm font-semibold text-[#A78BFA] shadow-sm">
+              <span
+                className="rounded-full px-5 py-1 text-sm font-semibold shadow-sm"
+                style={{
+                  border: "1px solid var(--color-footer-badge-border)",
+                  background: "var(--color-footer-badge-bg)",
+                  color: "var(--color-footer-badge-text)",
+                }}
+              >
                 Farcaster Native
               </span>
             </div>
@@ -102,7 +119,10 @@ export default function Footer() {
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
             <div className="flex items-center space-x-1 text-sm text-muted-foreground">
               <span>© 2024 DeQuizify. Built with</span>
-              <Heart className="w-4 h-4 text-red-500 fill-current" />
+              <Heart
+                className="w-4 h-4 fill-current"
+                style={{ color: "var(--color-footer-heart)" }}
+              />
               <span>for the crypto community.</span>
             </div>
 
@@ -113,21 +133,30 @@ export default function Footer() {
                 className="text-muted-foreground hover:text-foreground transition-colors duration-200"
                 aria-label="Twitter"
               >
-                <Twitter className="w-5 h-5" />
+                <Twitter
+                  className="w-5 h-5"
+                  style={{ color: "var(--color-footer-icon)" }}
+                />
               </a>
               <a
                 href="#"
                 className="text-muted-foreground hover:text-foreground transition-colors duration-200"
                 aria-label="GitHub"
               >
-                <Github className="w-5 h-5" />
+                <Github
+                  className="w-5 h-5"
+                  style={{ color: "var(--color-footer-icon)" }}
+                />
               </a>
               <a
                 href="#"
                 className="text-muted-foreground hover:text-foreground transition-colors duration-200"
                 aria-label="Discord"
               >
-                <MessageCircle className="w-5 h-5" />
+                <MessageCircle
+                  className="w-5 h-5"
+                  style={{ color: "var(--color-footer-icon)" }}
+                />
               </a>
             </div>
           </div>
