@@ -73,6 +73,23 @@
   --color-footer-badge-text: #a78bfa;
   --color-footer-heart: #ef4444;
   --color-footer-icon: #fff;
+
+  /* CustomCard specific variables */
+  --color-customcard-bg: #fff;
+  --color-customcard-border: #e5e7eb;
+  --color-customcard-border-hover: #ddd6fe;
+  --color-customcard-text: #111827;
+  --color-customcard-hover-bg: rgba(245, 243, 255, 0.3);
+  --color-customcard-gradient-from: #7c3aed;
+  --color-customcard-gradient-to: #a78bfa;
+  --color-customcard-icon: #fff;
+  --color-customcard-subtitle: #7c3aed;
+  --color-customcard-description: #4b5563;
+  --color-customcard-feature-dot: #8b5cf6;
+  --color-customcard-button-text: #6d28d9;
+  --color-customcard-button-bg: #fff;
+  --color-customcard-button-border: #ddd6fe;
+  --color-customcard-button-hover-bg: #f5f3ff;
 }
 
 .footer-brand-gradient {
@@ -155,6 +172,23 @@
   --color-footer-badge-text: #a78bfa;
   --color-footer-heart: #ef4444;
   --color-footer-icon: #fff;
+
+  /* CustomCard specific variables (dark mode) */
+  --color-customcard-bg: #18181b;
+  --color-customcard-border: #27272a;
+  --color-customcard-border-hover: #7c3aed;
+  --color-customcard-text: #f3f4f6;
+  --color-customcard-hover-bg: rgba(39, 39, 42, 0.3);
+  --color-customcard-gradient-from: #a78bfa;
+  --color-customcard-gradient-to: #7c3aed;
+  --color-customcard-icon: #fff;
+  --color-customcard-subtitle: #a78bfa;
+  --color-customcard-description: #9ca3af;
+  --color-customcard-feature-dot: #a78bfa;
+  --color-customcard-button-text: #a78bfa;
+  --color-customcard-button-bg: #18181b;
+  --color-customcard-button-border: #7c3aed;
+  --color-customcard-button-hover-bg: #27272a;
 }
 
 .dark .footer-brand-gradient {
