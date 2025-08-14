@@ -135,7 +135,7 @@ export default function Footer() {
               >
                 <Twitter
                   className="w-5 h-5"
-                  style={{ color: "var(--color-footer-icon)" }}
+                  style={{ color: "var(--color-foreground)" }}
                 />
               </a>
               <a
@@ -145,7 +145,7 @@ export default function Footer() {
               >
                 <Github
                   className="w-5 h-5"
-                  style={{ color: "var(--color-footer-icon)" }}
+                  style={{ color: "var(--color-foreground)" }}
                 />
               </a>
               <a
@@ -155,7 +155,7 @@ export default function Footer() {
               >
                 <MessageCircle
                   className="w-5 h-5"
-                  style={{ color: "var(--color-footer-icon)" }}
+                  style={{ color: "var(--color-foreground)" }}
                 />
               </a>
             </div>
