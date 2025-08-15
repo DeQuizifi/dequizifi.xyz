@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/card";
 import * as LucideIcons from "lucide-react";
 
+
 type CustomCardProps = {
   title: string;
   subtitle?: string;
@@ -26,7 +27,8 @@ export default function CustomCard({
   buttonlabel,
   icon = "Brain",
 }: CustomCardProps) {
-  const IconComponent = LucideIcons[icon] ?? LucideIcons["Brain"];
+  const IconComponent = LucideIcons[icon] as React.ComponentType<React.SVGProps<SVGSVGElement>>;
+
   return (
     <div
       style={{
