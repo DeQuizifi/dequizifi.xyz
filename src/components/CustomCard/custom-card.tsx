@@ -42,7 +42,7 @@ export default function CustomCard({
           backgroundColor: "var(--color-customcard-bg)",
           color: "var(--color-customcard-text)",
         }}
-        className="group flex h-full w-full max-w-[320px] cursor-pointer flex-col border-0 bg-transparent p-6 font-sans shadow-none transition hover:bg-[var(--color-customcard-hover-bg)]"
+        className="group flex h-full w-full max-w-[320px] cursor-pointer flex-col border-0 bg-transparent p-6 shadow-none transition hover:bg-[var(--color-customcard-hover-bg)]"
       >
         <CardHeader className="flex w-full flex-col items-start gap-3 px-0 pt-0 pb-4">
           <div
