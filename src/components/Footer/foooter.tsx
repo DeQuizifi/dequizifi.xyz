@@ -10,7 +10,7 @@ export default function Footer({title, subtitle, IconComponent}: FooterProps) {
             <div>
                 <IconComponent className="w-6 h-6 text-foreground" />
             </div>
-            <h1 className="font-bold font-serif text-lg text-sidebar-primary">{title}</h1>
+            <h1 className="font-bold text-lg text-sidebar-primary">{title}</h1>
             <p className="text-sm text-muted-foreground text-center">{subtitle}</p>
         </footer>
     )

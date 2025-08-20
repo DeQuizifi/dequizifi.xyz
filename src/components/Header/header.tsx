@@ -19,7 +19,7 @@ export default function Header({title,subtitle}: HeaderProps) {
                 mb-1
   ">{title}</h1>
                 {subtitle && 
-                <p className="text-xl text-center text-chart-5 font-sans">{subtitle}</p>}
+                <p className="text-xl text-center text-chart-5">{subtitle}</p>}
             </header>
         </div>
     )

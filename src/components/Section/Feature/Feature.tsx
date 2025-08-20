@@ -7,7 +7,7 @@ export default function Feature() {
   return (
     <div className="bg-sidebar-primary-foreground overflow-x-hidden min-h-screen">
       <div className="w-full flex justify-center mt-4">
-        <span className="flex items-center px-1 py-0.5 gap-0.5 text-xs font-sans rounded-full bg-sidebar-primary-foreground text-foreground border border-chart-2 shadow-sm">
+        <span className="flex items-center px-1 py-0.5 gap-0.5 text-xs rounded-full bg-sidebar-primary-foreground text-foreground border border-chart-2 shadow-sm">
           <span className="text-primary">
             <Star className="w-5 h-5" />
           </span>
