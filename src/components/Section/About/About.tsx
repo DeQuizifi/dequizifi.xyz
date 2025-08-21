@@ -30,7 +30,7 @@ export default function About() {
             "Visual learning approach",
             "Confidence building",
           ]}
-          buttonLabel="Start Your Journey"
+          buttonlabel="Start Your Journey"
           icon="BookOpen"
         />
         <CustomCard
@@ -42,7 +42,7 @@ export default function About() {
             "Expert validation",
             "Professional network",
           ]}
-          buttonLabel="Start Your Journey"
+          buttonlabel="Start Your Journey"
           icon="TrendingUp"
         />
         <CustomCard
@@ -54,7 +54,7 @@ export default function About() {
             "Community rewards",
             "Native integration",
           ]}
-          buttonLabel="Start Your Journey"
+          buttonlabel="Start Your Journey"
           icon="Heart"
         />
       </div>

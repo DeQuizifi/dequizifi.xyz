@@ -2,7 +2,10 @@ import { Heart, Twitter, Github, MessageCircle, Sparkles } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-border py-10 px-4 sm:py-16 sm:px-6 lg:px-8">
+    <footer
+      className="bg-white border-t border-border py-10 px-4 sm:py-16 sm:px-6 lg:px-8"
+      aria-label="Site Footer"
+    >
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand Section */}
@@ -52,7 +55,7 @@ export default function Footer() {
             <h3 className="font-semibold text-foreground text-base">
               Platform
             </h3>
-            <nav className="space-y-3">
+            <nav className="space-y-3" aria-label="Platform">
               <a
                 href="#"
                 className="block text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
@@ -85,7 +88,7 @@ export default function Footer() {
             <h3 className="font-semibold text-foreground text-base">
               Community
             </h3>
-            <nav className="space-y-3">
+            <nav className="space-y-3" aria-label="Community">
               <a
                 href="#"
                 className="block text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
