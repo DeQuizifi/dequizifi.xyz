@@ -5,15 +5,14 @@ export default function About() {
     <section className="w-full bg-[var(--background)] flex flex-col items-center py-20 px-4">
       <div className="mb-4 flex items-center">
         <span className="bg-[var(--color-about-badge-bg)] text-[var(--color-about-badge-text)] px-3 py-1 rounded-full text-xs font-semibold tracking-wide">
-          ⚡ Perfect For
+          <span aria-label="Perfect For" role="text">
+            ⚡ Perfect For
+          </span>
         </span>
       </div>
       <h2
-        className="text-[42px] leading-tight md:text-5xl font-extrabold text-center bg-gradient-to-r bg-clip-text text-transparent mb-4"
-        style={{
-          backgroundImage:
-            "linear-gradient(to right, var(--color-hero-gradient-from), var(--color-hero-gradient-to))",
-        }}
+        className="text-[42px] leading-tight md:text-5xl font-extrabold text-center mb-4 aboutHeadingGradient"
+        aria-label="Who Is DeQuizify For?"
       >
         Who Is DeQuizify For?
       </h2>
@@ -31,7 +30,7 @@ export default function About() {
             "Visual learning approach",
             "Confidence building",
           ]}
-          buttonlabel="Start Your Journey"
+          buttonLabel="Start Your Journey"
           icon="BookOpen"
         />
         <CustomCard
@@ -43,7 +42,7 @@ export default function About() {
             "Expert validation",
             "Professional network",
           ]}
-          buttonlabel="Start Your Journey"
+          buttonLabel="Start Your Journey"
           icon="TrendingUp"
         />
         <CustomCard
@@ -55,7 +54,7 @@ export default function About() {
             "Community rewards",
             "Native integration",
           ]}
-          buttonlabel="Start Your Journey"
+          buttonLabel="Start Your Journey"
           icon="Heart"
         />
       </div>

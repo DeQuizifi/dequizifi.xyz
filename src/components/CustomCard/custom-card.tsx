@@ -15,7 +15,7 @@ type CustomCardProps = {
   subtitle?: string;
   description: string;
   features?: string[];
-  buttonlabel: string;
+  buttonLabel: string;
   icon?: keyof typeof LucideIcons;
 };
 
@@ -24,7 +24,7 @@ export default function CustomCard({
   subtitle,
   description,
   features = [],
-  buttonlabel,
+  buttonLabel,
   icon = "Brain",
 }: CustomCardProps) {
   const IconComponent = LucideIcons[icon] as React.ComponentType<React.SVGProps<SVGSVGElement>>;
@@ -101,7 +101,7 @@ export default function CustomCard({
             }}
             className="w-full rounded-lg border px-4 py-2 text-sm font-medium transition-colors hover:bg-[var(--color-customcard-button-hover-bg)]"
           >
-            {buttonlabel}
+            {buttonLabel}
           </button>
         </CardFooter>
       </Card>

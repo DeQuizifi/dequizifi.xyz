@@ -115,6 +115,16 @@
   background-clip: text;
 }
 
+.aboutHeadingGradient {
+  background-image: linear-gradient(
+    to right,
+    var(--color-hero-gradient-from),
+    var(--color-hero-gradient-to)
+  );
+  background-clip: text;
+  color: transparent;
+}
+
 .dark {
   --background: hsl(263 50% 5%);
   --foreground: hsl(263 5% 90%);
