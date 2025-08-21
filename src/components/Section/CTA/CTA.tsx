@@ -24,33 +24,16 @@ export default function CTA() {
       </p>
       <div className="flex justify-center gap-4">
         <button
-          className="rounded-md px-6 py-2 font-medium shadow-md transition"
-          style={{
-            background: "var(--color-cta-primary-bg)",
-            color: "var(--color-cta-primary-text)",
-          }}
+          type="button"
+          className="rounded-md px-6 py-2 font-medium shadow-md transition bg-[var(--color-cta-primary-bg)] text-[var(--color-cta-primary-text)] hover:bg-[var(--color-cta-primary-hover-bg)]"
         >
-          <span
-            className="hover:bg-[var(--color-cta-primary-hover-bg)]"
-            style={{ display: "block" }}
-          >
-            Get Started Now
-          </span>
+          Get Started Now
         </button>
         <button
-          className="rounded-md px-6 py-2 font-medium shadow-md border transition"
-          style={{
-            background: "var(--color-cta-secondary-bg)",
-            color: "var(--color-cta-secondary-text)",
-            border: "1px solid var(--color-cta-secondary-border)",
-          }}
+          type="button"
+          className="rounded-md px-6 py-2 font-medium shadow-md transition bg-[var(--color-cta-secondary-bg)] text-[var(--color-cta-secondary-text)] border-[1px] border-[var(--color-cta-secondary-border)] hover:bg-[var(--color-cta-secondary-hover-bg)]"
         >
-          <span
-            className="hover:bg-[var(--color-cta-secondary-hover-bg)]"
-            style={{ display: "block" }}
-          >
-            View Demo
-          </span>
+          View Demo
         </button>
       </div>
     </section>
