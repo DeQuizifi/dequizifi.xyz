@@ -28,7 +28,7 @@ export default function CustomCard({
   icon = "Brain",
 }: CustomCardProps) {
   const IconComponent = LucideIcons[icon] as React.ComponentType<React.SVGProps<SVGSVGElement>>;
-
+console.log("CustomCard props:", { title, buttonlabel, icon });
   return (
     <div
       style={{
@@ -102,6 +102,7 @@ export default function CustomCard({
             className="w-full rounded-lg border px-4 py-2 text-sm font-medium transition-colors hover:bg-[var(--color-customcard-button-hover-bg)]"
           >
             {buttonlabel}
+            
           </button>
         </CardFooter>
       </Card>
