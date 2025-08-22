@@ -1,6 +1,6 @@
 import CustomCard from "@/components/CustomCard/custom-card";
 import Header from "@/components/Header/header";
-import Footer from "@/components/Footer/foooter";
+import Footer from "@/components/Footer/footer";
 import { Star, GraduationCap, Trophy, Zap, Users } from "lucide-react";
 
 export default function Feature() {
