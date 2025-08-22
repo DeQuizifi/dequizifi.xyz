@@ -3,7 +3,7 @@ import { Heart, Twitter, Github, MessageCircle, Sparkles } from "lucide-react";
 export default function Footer() {
   return (
     <footer
-      className="bg-white border-t border-border py-10 px-4 sm:py-16 sm:px-6 lg:px-8"
+      className="bg-sidebar border-t border-border py-10 px-4 sm:py-16 sm:px-6 lg:px-8"
       aria-label="Site Footer"
     >
       <div className="max-w-7xl mx-auto">
@@ -58,25 +58,25 @@ export default function Footer() {
             <nav className="space-y-3" aria-label="Platform">
               <a
                 href="#"
-                className="block text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+                className="block text-sm text-muted-foreground hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-colors duration-200"
               >
                 Quizzes
               </a>
               <a
                 href="#"
-                className="block text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+                className="block text-sm text-muted-foreground hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-colors duration-200"
               >
                 Leaderboard
               </a>
               <a
                 href="#"
-                className="block text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+                className="block text-sm text-muted-foreground hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-colors duration-200"
               >
                 Earn Tokens
               </a>
               <a
                 href="#"
-                className="block text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+                className="block text-sm text-muted-foreground hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-colors duration-200"
               >
                 Trading
               </a>
@@ -91,25 +91,25 @@ export default function Footer() {
             <nav className="space-y-3" aria-label="Community">
               <a
                 href="#"
-                className="block text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+                className="block text-sm text-muted-foreground hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-colors duration-200"
               >
                 Farcaster
               </a>
               <a
                 href="#"
-                className="block text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+                className="block text-sm text-muted-foreground hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-colors duration-200"
               >
                 Discord
               </a>
               <a
                 href="#"
-                className="block text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+                className="block text-sm text-muted-foreground hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-colors duration-200"
               >
                 Documentation
               </a>
               <a
                 href="#"
-                className="block text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
+                className="block text-sm text-muted-foreground hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-colors duration-200"
               >
                 API
               </a>
@@ -133,7 +133,7 @@ export default function Footer() {
             <div className="flex items-center space-x-4">
               <a
                 href="#"
-                className="text-muted-foreground hover:text-foreground transition-colors duration-200"
+                className="text-muted-foreground hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-colors duration-200"
                 aria-label="Twitter"
               >
                 <Twitter
@@ -143,7 +143,7 @@ export default function Footer() {
               </a>
               <a
                 href="#"
-                className="text-muted-foreground hover:text-foreground transition-colors duration-200"
+                className="text-muted-foreground hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-colors duration-200"
                 aria-label="GitHub"
               >
                 <Github
@@ -153,7 +153,7 @@ export default function Footer() {
               </a>
               <a
                 href="#"
-                className="text-muted-foreground hover:text-foreground transition-colors duration-200"
+                className="text-muted-foreground hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-colors duration-200"
                 aria-label="Discord"
               >
                 <MessageCircle
