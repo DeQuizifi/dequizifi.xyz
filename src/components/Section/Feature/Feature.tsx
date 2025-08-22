@@ -3,13 +3,36 @@ import Header from "@/components/Header/header";
 import Footer from "@/components/Footer/footer";
 import { Star, GraduationCap, Trophy, Zap, Users } from "lucide-react";
 
+const footers = [
+  {
+    title: "Expert Content",
+    subtitle: "Curated by DeFi professionals",
+    IconComponent: GraduationCap,
+  },
+  {
+    title: "Achievement System",
+    subtitle: "Unlock badges and milestones",
+    IconComponent: Trophy,
+  },
+  {
+    title: "Real-time Rewards",
+    subtitle: "Instant token distribution",
+    IconComponent: Zap,
+  },
+  {
+    title: "Farcaster Native",
+    subtitle: "Built for crypto-social",
+    IconComponent: Users,
+  },
+];
+
 export default function Feature() {
   return (
     <div className="bg-sidebar-primary-foreground overflow-x-hidden min-h-screen">
       <div className="w-full flex justify-center mt-4">
         <span className="flex items-center px-1 py-0.5 gap-0.5 text-xs rounded-full bg-sidebar-primary-foreground text-foreground border border-chart-2 shadow-sm">
           <span className="text-primary">
-            <Star className="w-5 h-5" />
+            <Star className="w-5 h-5" aria-label="Core Features Icon" />
           </span>
           Core Features
         </span>
@@ -50,27 +73,16 @@ export default function Feature() {
           />
         </div>
       </div>
+
       <div className="flex flex-wrap items-center justify-center gap-20 my-8">
-        <Footer
-          title="Expert Content"
-          subtitle="Curated by DeFi professionals"
-          IconComponent={GraduationCap}
-        />
-        <Footer
-          title="Achievement System"
-          subtitle="Unlock badges and milestones"
-          IconComponent={Trophy}
-        />
-        <Footer
-          title="Real-time Rewards"
-          subtitle="Instant token distribution"
-          IconComponent={Zap}
-        />
-        <Footer
-          title="Farcaster Native"
-          subtitle="Built for crypto-social"
-          IconComponent={Users}
-        />
+        {footers.map((footer, index) => (
+          <Footer
+            key={index}
+            title={footer.title}
+            subtitle={footer.subtitle}
+            IconComponent={footer.IconComponent}
+          />
+        ))}
       </div>
     </div>
   );

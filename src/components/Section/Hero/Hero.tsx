@@ -44,24 +44,10 @@ export default function Hero() {
       </p>
 
       <div className="flex w-full max-w-md gap-4 justify-center mb-12">
-        <button
-          className="font-semibold px-8 py-3 rounded-lg shadow transition"
-          style={{
-            background:
-              "linear-gradient(to right, var(--color-hero-gradient-from), var(--color-hero-gradient-to))",
-            color: "#fff",
-          }}
-        >
+        <button className="font-semibold px-8 py-3 rounded-lg shadow transition bg-gradient-to-r from-[var(--color-hero-gradient-from)] to-[var(--color-hero-gradient-to)] text-background hover:opacity-90">
           Start Learning →
         </button>
-        <button
-          className="border shadow font-semibold px-8 py-3 rounded-lg transition flex items-center gap-2"
-          style={{
-            background: "var(--color-hero-button-bg)",
-            color: "var(--primary-foreground)",
-            borderColor: "var(--border)",
-          }}
-        >
+        <button className="border shadow font-semibold px-8 py-3 rounded-lg transition flex items-center gap-2 bg-[var(--color-hero-button-bg)] text-[var(--primary-foreground)] border-[var(--border)] hover:bg-opacity-90">
           <span>
             <HiOutlineBolt />
           </span>{" "}
