@@ -1,4 +1,4 @@
-import CustomCard from "@/components/CustomCard/custom-card";
+import CustomCard from "@/components/common/CustomCard";
 import Header from "@/components/Header/header";
 import Footer from "@/components/Footer/footer";
 import { Star, GraduationCap, Trophy, Zap, Users } from "lucide-react";
