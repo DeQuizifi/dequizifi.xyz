@@ -26,12 +26,14 @@ export default function CTA() {
         <button
           type="button"
           className="rounded-md px-6 py-2 font-medium shadow-md transition bg-[var(--color-cta-primary-bg)] text-[var(--color-cta-primary-text)] hover:bg-[var(--color-cta-primary-hover-bg)]"
+          aria-label="Get Started Now - Begin learning DeFi"
         >
           Get Started Now
         </button>
         <button
           type="button"
           className="rounded-md px-6 py-2 font-medium shadow-md transition bg-[var(--color-cta-secondary-bg)] text-[var(--color-cta-secondary-text)] border-[1px] border-[var(--color-cta-secondary-border)] hover:bg-[var(--color-cta-secondary-hover-bg)]"
+          aria-label="View Demo - Preview the quiz platform"
         >
           View Demo
         </button>
