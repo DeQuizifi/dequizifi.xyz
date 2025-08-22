@@ -1,4 +1,4 @@
-import CustomCard from "@/components/CustomCard/custom-card";
+import CustomCard from "@/components/common/CustomCard";
 
 export default function About() {
   return (
