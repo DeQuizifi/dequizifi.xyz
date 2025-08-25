@@ -49,7 +49,7 @@ const FEATURE_CARDS = [
     features: ["Token Rewards", "Badge Trading", "Revenue Share"],
   },
   {
-    icon: "Network",
+  icon: "Share2",
     buttonlabel: "Connect",
     title: "Social Learning",
     description:
