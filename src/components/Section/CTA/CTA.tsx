@@ -9,10 +9,17 @@ const containerStyle: React.CSSProperties = {
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: "primary" | "secondary";
+  "aria-label"?: string;
 };
 
-function Button({ children, variant = "primary", aria, onClick }: ButtonProps) {
-  const base = "rounded-md px-6 py-2 font-medium shadow-md transition";
+function Button({
+  children,
+  variant = "primary",
+  "aria-label": ariaLabel,
+  onClick,
+}: ButtonProps) {
+  const base =
+    "rounded-md px-6 py-2 font-medium shadow-md transition-transform transition duration-200 ease-in-out";
   const variants: Record<string, string> = {
     primary:
       "bg-[var(--color-cta-primary-bg)] text-[var(--color-cta-primary-text)] hover:bg-[var(--color-cta-primary-hover-bg)]",
@@ -23,8 +30,8 @@ function Button({ children, variant = "primary", aria, onClick }: ButtonProps) {
   return (
     <button
       type="button"
-      className={`${base} ${variants[variant]}`}
-      aria-label={aria}
+      className={`${base} ${variants[variant]} hover:scale-105`}
+      aria-label={ariaLabel}
       onClick={onClick}
     >
       {children}
@@ -54,12 +61,12 @@ export default function CTA() {
       </p>
 
       <div className="flex justify-center gap-4">
-        <Button aria="Get Started Now - Begin learning DeFi">
+        <Button aria-label="Get Started Now - Begin learning DeFi">
           Get Started Now
         </Button>
         <Button
           variant="secondary"
-          aria="View Demo - Preview the quiz platform"
+          aria-label="View Demo - Preview the quiz platform"
         >
           View Demo
         </Button>
