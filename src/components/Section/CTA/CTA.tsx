@@ -5,11 +5,10 @@ const containerStyle: React.CSSProperties = {
   border: "1px solid var(--color-cta-border)",
 };
 
-type ButtonProps = {
-  children: React.ReactNode;
+// src/components/Section/CTA/CTA.tsx
+
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: "primary" | "secondary";
-  aria?: string;
-  onClick?: () => void;
 };
 
 function Button({ children, variant = "primary", aria, onClick }: ButtonProps) {
