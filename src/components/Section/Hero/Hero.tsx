@@ -7,7 +7,7 @@ export default function Hero() {
       style={{ background: "var(--background)" }}
     >
       <div
-        className="flex items-center gap-1 space-between mb-6 mt-4 px-4 py-1 rounded-full text-xs border font-semibold shadow"
+        className="flex items-center gap-1 justify-center mb-6 mt-4 px-4 py-1 rounded-full text-xs border font-semibold shadow"
         style={{
           background: "var(--card)",
           color: "var(--primary)",
@@ -24,7 +24,7 @@ export default function Hero() {
         className="text-7xl md:text-7xl font-extrabold text-center mb-2"
         style={{ color: "var(--primary-foreground)" }}
       >
-        Learn Defi,
+        Learn DeFi,
       </h1>
 
       <h2
