@@ -3,7 +3,7 @@ import { HiOutlineBolt, HiOutlineStar } from "react-icons/hi2";
 export default function Hero() {
   return (
     <section
-      className="flex flex-col items-center justify-center min-h-screen"
+      className="flex flex-col items-center justify-center min-h-screen mx-auto max-w-2xl px-4"
       style={{ background: "var(--background)" }}
     >
       <div
@@ -43,19 +43,19 @@ export default function Hero() {
         community.
       </p>
 
-      <div className="flex w-full max-w-md gap-4 justify-center mb-12">
-        <button className="font-semibold px-8 py-3 rounded-lg shadow transition bg-gradient-to-r from-[var(--color-hero-gradient-from)] to-[var(--color-hero-gradient-to)] text-background hover:opacity-90">
-          Start Learning →
+      <div className="flex flex-col sm:flex-row mx-auto max-w-md gap-3 sm:gap-6 justify-center mb-12 px-2 w-full">
+        <button className="font-semibold w-full sm:w-auto px-6 sm:px-10 py-2 sm:py-4 rounded-xl shadow-lg transition-transform duration-200 bg-gradient-to-r from-[var(--color-hero-gradient-from)] to-[var(--color-hero-gradient-to)] text-background hover:scale-105 hover:shadow-xl hover:opacity-90 text-base sm:text-xl flex justify-center text-center">
+          <span className="whitespace-nowrap">Start Learning →</span>
         </button>
-        <button className="border shadow font-semibold px-8 py-3 rounded-lg transition flex items-center gap-2 bg-[var(--color-hero-button-bg)] text-[var(--primary-foreground)] border-[var(--border)] hover:bg-opacity-90">
+        <button className="border shadow-lg font-semibold w-full sm:w-auto px-6 sm:px-10 py-2 sm:py-4 rounded-xl transition-transform duration-200 flex items-center justify-center gap-2 bg-[var(--color-hero-button-bg)] text-[var(--primary-foreground)] border-[var(--border)] hover:scale-105 hover:shadow-xl hover:bg-opacity-90 text-base sm:text-xl text-center">
           <span>
             <HiOutlineBolt />
-          </span>{" "}
-          Explore Quizzes
+          </span>
+          <span className="whitespace-nowrap">Explore Quizzes</span>
         </button>
       </div>
 
-      <div className="flex gap-28 mb-8">
+      <div className="flex gap-20 md:gap-28 mb-8 ">
         <div className="text-center">
           <span
             className="block text-2xl font-bold"
