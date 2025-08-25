@@ -27,7 +27,7 @@ const footers = [
   },
 ];
 
-const FEATURE_CARDS: CustomCardProps[] = [
+const FEATURE_CARDS = [
   {
     icon: "Brain",
     buttonlabel: "Learn",
@@ -45,7 +45,7 @@ const FEATURE_CARDS: CustomCardProps[] = [
     buttonlabel: "Earn",
     title: "Multiple Earning Loops",
     description:
-      "Earn tokens for correct answers, trade achievements badges, and participate in revenue-sharing quizzes.",
+      "Earn tokens for correct answers, trade achievement badges, and participate in revenue-sharing quizzes.",
     features: ["Token Rewards", "Badge Trading", "Revenue Share"],
   },
   {
@@ -56,7 +56,7 @@ const FEATURE_CARDS: CustomCardProps[] = [
       "Join leaderboards, collect badges, challenge friends, and learn together in the Farcaster community.",
     features: ["Leaderboards", "Multiplayer", "Community"],
   },
-];
+] as const satisfies ReadonlyArray<CustomCardProps>;
 
 export default function Feature() {
   return (
