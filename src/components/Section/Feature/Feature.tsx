@@ -83,7 +83,7 @@ export default function Feature() {
       />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-6 justify-center items-start my-6">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-6 justify-center items-center lg:items-start my-6">
           {FEATURE_CARDS.map((c) => (
             <CustomCard key={c.title} {...c} />
           ))}
