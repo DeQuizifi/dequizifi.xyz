@@ -5,24 +5,21 @@ const containerStyle: React.CSSProperties = {
   border: "1px solid var(--color-cta-border)",
 };
 
-
-type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+type CtaButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: "primary" | "secondary";
   "aria-label"?: string;
 };
 
-function Button({
+function CtaButton({
   children,
   variant = "primary",
   "aria-label": ariaLabel,
   onClick,
-}: ButtonProps) {
+  ...rest
+}: CtaButtonProps) {
   const base =
-    "rounded-md px-6 py-2 font-medium shadow-md transition-transform transition duration-200 ease-in-out";
-};
-
-function Button({ children, variant = "primary", aria, onClick }: ButtonProps) {
-  const variants: Record<string, string> = {
+    "rounded-md px-6 py-2 font-medium shadow-md transition-transform duration-200 ease-in-out";
+  const variants: Record<Required<CtaButtonProps>["variant"], string> = {
     primary:
       "bg-[var(--color-cta-primary-bg)] text-[var(--color-cta-primary-text)] hover:bg-[var(--color-cta-primary-hover-bg)]",
     secondary:
@@ -35,6 +32,7 @@ function Button({ children, variant = "primary", aria, onClick }: ButtonProps) {
       className={`${base} ${variants[variant]} hover:scale-105`}
       aria-label={ariaLabel}
       onClick={onClick}
+      {...rest}
     >
       {children}
     </button>
@@ -63,15 +61,15 @@ export default function CTA() {
       </p>
 
       <div className="flex justify-center gap-4">
-        <Button aria-label="Get Started Now - Begin learning DeFi">
+        <CtaButton aria-label="Get Started Now - Begin learning DeFi">
           Get Started Now
-        </Button>
-        <Button
+        </CtaButton>
+        <CtaButton
           variant="secondary"
           aria-label="View Demo - Preview the quiz platform"
         >
           View Demo
-        </Button>
+        </CtaButton>
       </div>
     </section>
   );
