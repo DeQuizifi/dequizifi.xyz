@@ -98,14 +98,14 @@ export default function Footer(): JSX.Element {
                 className="ml-4 text-4xl font-extrabold footer-brand-gradient"
                 style={{ letterSpacing: "-1px" }}
               >
-                DeQuizify
+                DeQuiziFi
               </span>
             </div>
 
             <p className="text-muted-foreground text-sm leading-relaxed max-w-md">
               The most elegant DeFi education platform built for the Farcaster
               community. Learn, earn, and connect through beautiful quiz
-              experiences.
+              experiences on DeQuiziFi.
             </p>
 
             <div className="inline-block">
@@ -117,7 +117,7 @@ export default function Footer(): JSX.Element {
                   color: "var(--color-footer-badge-text)",
                 }}
               >
-                Farcaster Native
+                Farcaster Native on DeQuiziFi
               </span>
             </div>
           </div>
@@ -131,12 +131,12 @@ export default function Footer(): JSX.Element {
             <SocialLinks />
 
             <div className="flex items-center space-x-1 text-sm text-muted-foreground order-2 w-full sm:w-auto justify-start">
-              <span>© {year} DeQuizify. Built with</span>
+              <span>© {year} DeQuiziFi. Built with</span>
               <Heart
                 className="w-4 h-4 fill-current"
                 style={{ color: "var(--color-footer-heart)" }}
               />
-              <span>for the crypto community.</span>
+              <span>for the crypto community on DeQuiziFi.</span>
             </div>
           </div>
         </div>
