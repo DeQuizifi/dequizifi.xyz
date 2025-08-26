@@ -5,7 +5,6 @@ const containerStyle: React.CSSProperties = {
   border: "1px solid var(--color-cta-border)",
 };
 
-// src/components/Section/CTA/CTA.tsx
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: "primary" | "secondary";
@@ -20,6 +19,9 @@ function Button({
 }: ButtonProps) {
   const base =
     "rounded-md px-6 py-2 font-medium shadow-md transition-transform transition duration-200 ease-in-out";
+};
+
+function Button({ children, variant = "primary", aria, onClick }: ButtonProps) {
   const variants: Record<string, string> = {
     primary:
       "bg-[var(--color-cta-primary-bg)] text-[var(--color-cta-primary-text)] hover:bg-[var(--color-cta-primary-hover-bg)]",

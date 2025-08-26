@@ -13,7 +13,7 @@ export type CustomCardProps = {
   title: string;
   subtitle?: string;
   description: string;
-  features?: string[];
+  features?: ReadonlyArray<string>;
   buttonlabel: string;
   icon?: keyof typeof LucideIcons;
 };
