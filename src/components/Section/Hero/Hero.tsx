@@ -1,5 +1,21 @@
 import { HiOutlineBolt, HiOutlineStar } from "react-icons/hi2";
 
+function HeroStat({ value, label }: { value: string; label: string }) {
+  return (
+    <div className="text-center">
+      <span
+        className="block text-2xl font-bold"
+        style={{ color: "var(--primary)" }}
+      >
+        {value}
+      </span>
+      <span className="text-sm" style={{ color: "var(--color-hero-muted)" }}>
+        {label}
+      </span>
+    </div>
+  );
+}
+
 export default function Hero() {
   return (
     <section
@@ -56,48 +72,9 @@ export default function Hero() {
       </div>
 
       <div className="flex gap-20 md:gap-28 mb-8 ">
-        <div className="text-center">
-          <span
-            className="block text-2xl font-bold"
-            style={{ color: "var(--primary)" }}
-          >
-            1000+
-          </span>
-          <span
-            className="text-sm"
-            style={{ color: "var(--color-hero-muted)" }}
-          >
-            DeFi Questions
-          </span>
-        </div>
-        <div className="text-center">
-          <span
-            className="block text-2xl font-bold"
-            style={{ color: "var(--primary)" }}
-          >
-            50K+
-          </span>
-          <span
-            className="text-sm"
-            style={{ color: "var(--color-hero-muted)" }}
-          >
-            Tokens Earned
-          </span>
-        </div>
-        <div className="text-center">
-          <span
-            className="block text-2xl font-bold"
-            style={{ color: "var(--primary)" }}
-          >
-            500+
-          </span>
-          <span
-            className="text-sm"
-            style={{ color: "var(--color-hero-muted)" }}
-          >
-            Active Learners
-          </span>
-        </div>
+        <HeroStat value="1000+" label="DeFi Questions" />
+        <HeroStat value="50K+" label="Tokens Earned" />
+        <HeroStat value="500+" label="Active Learners" />
       </div>
     </section>
   );
