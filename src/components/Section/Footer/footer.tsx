@@ -1,16 +1,88 @@
 import { Heart, Twitter, Github, MessageCircle, Sparkles } from "lucide-react";
 
-export default function Footer() {
+type NavItem = { label: string; href: string };
+
+const PLATFORM: NavItem[] = [
+  { label: "Quizzes", href: "#" },
+  { label: "Leaderboard", href: "#" },
+  { label: "Earn Tokens", href: "#" },
+  { label: "Trading", href: "#" },
+];
+
+const COMMUNITY: NavItem[] = [
+  { label: "Farcaster", href: "#" },
+  { label: "Discord", href: "#" },
+  { label: "Documentation", href: "#" },
+  { label: "API", href: "#" },
+];
+
+function NavColumn({ title, items }: { title: string; items: NavItem[] }) {
+  return (
+    <div className="space-y-4">
+      <h3 className="font-semibold text-foreground text-base">{title}</h3>
+      <nav className="space-y-3" aria-label={title}>
+        {items.map((it) => (
+          <a
+            key={it.label}
+            href={it.href}
+            className="block text-sm text-muted-foreground hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-colors duration-150"
+          >
+            {it.label}
+          </a>
+        ))}
+      </nav>
+    </div>
+  );
+}
+
+function SocialLinks() {
+  const links: { href: string; label: string; icon: JSX.Element }[] = [
+    {
+      href: "#",
+      label: "Twitter",
+      icon: <Twitter className="w-5 h-5" aria-hidden />,
+    },
+    {
+      href: "#",
+      label: "GitHub",
+      icon: <Github className="w-5 h-5" aria-hidden />,
+    },
+    {
+      href: "#",
+      label: "Discord",
+      icon: <MessageCircle className="w-5 h-5" aria-hidden />,
+    },
+  ];
+
+  return (
+    <div className="flex items-center space-x-4 order-1 w-full sm:w-auto justify-start">
+      {links.map((l) => (
+        <a
+          key={l.label}
+          href={l.href}
+          title={l.label}
+          aria-label={l.label}
+          className="text-muted-foreground hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-colors duration-150"
+        >
+          {l.icon}
+        </a>
+      ))}
+    </div>
+  );
+}
+
+export default function Footer(): JSX.Element {
+  const year = new Date().getFullYear();
+
   return (
     <footer
-      className="bg-sidebar border-t border-border py-10 px-4 sm:py-16 sm:px-6 lg:px-8"
       aria-label="Site Footer"
+      className="bg-sidebar border-t border-border py-10 px-4 sm:py-16 sm:px-6 lg:px-8"
     >
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
-          {/* Brand Section */}
           <div className="md:col-span-2 space-y-4">
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center">
               <div
                 className="w-14 h-14 bg-gradient-to-br rounded-2xl flex items-center justify-center"
                 style={{
@@ -24,18 +96,18 @@ export default function Footer() {
               </div>
               <span
                 className="ml-4 text-4xl font-extrabold footer-brand-gradient"
-                style={{
-                  letterSpacing: "-1px",
-                }}
+                style={{ letterSpacing: "-1px" }}
               >
                 DeQuizify
               </span>
             </div>
+
             <p className="text-muted-foreground text-sm leading-relaxed max-w-md">
               The most elegant DeFi education platform built for the Farcaster
               community. Learn, earn, and connect through beautiful quiz
               experiences.
             </p>
+
             <div className="inline-block">
               <span
                 className="rounded-full px-5 py-1 text-sm font-semibold shadow-sm"
@@ -50,117 +122,21 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Platform Section */}
-          <div className="space-y-4">
-            <h3 className="font-semibold text-foreground text-base">
-              Platform
-            </h3>
-            <nav className="space-y-3" aria-label="Platform">
-              <a
-                href="#"
-                className="block text-sm text-muted-foreground hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-colors duration-200"
-              >
-                Quizzes
-              </a>
-              <a
-                href="#"
-                className="block text-sm text-muted-foreground hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-colors duration-200"
-              >
-                Leaderboard
-              </a>
-              <a
-                href="#"
-                className="block text-sm text-muted-foreground hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-colors duration-200"
-              >
-                Earn Tokens
-              </a>
-              <a
-                href="#"
-                className="block text-sm text-muted-foreground hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-colors duration-200"
-              >
-                Trading
-              </a>
-            </nav>
-          </div>
-
-          {/* Community Section */}
-          <div className="space-y-4">
-            <h3 className="font-semibold text-foreground text-base">
-              Community
-            </h3>
-            <nav className="space-y-3" aria-label="Community">
-              <a
-                href="#"
-                className="block text-sm text-muted-foreground hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-colors duration-200"
-              >
-                Farcaster
-              </a>
-              <a
-                href="#"
-                className="block text-sm text-muted-foreground hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-colors duration-200"
-              >
-                Discord
-              </a>
-              <a
-                href="#"
-                className="block text-sm text-muted-foreground hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-colors duration-200"
-              >
-                Documentation
-              </a>
-              <a
-                href="#"
-                className="block text-sm text-muted-foreground hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-colors duration-200"
-              >
-                API
-              </a>
-            </nav>
-          </div>
+          <NavColumn title="Platform" items={PLATFORM} />
+          <NavColumn title="Community" items={COMMUNITY} />
         </div>
 
-        {/* Bottom Section */}
         <div className="mt-12 pt-8 border-t border-border">
-          <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
-            <div className="flex items-center space-x-1 text-sm text-muted-foreground">
-              <span>© 2024 DeQuizify. Built with</span>
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-4 sm:space-y-0">
+            <SocialLinks />
+
+            <div className="flex items-center space-x-1 text-sm text-muted-foreground order-2 w-full sm:w-auto justify-start">
+              <span>© {year} DeQuizify. Built with</span>
               <Heart
                 className="w-4 h-4 fill-current"
                 style={{ color: "var(--color-footer-heart)" }}
               />
               <span>for the crypto community.</span>
-            </div>
-
-            {/* Social Links */}
-            <div className="flex items-center space-x-4">
-              <a
-                href="#"
-                className="text-muted-foreground hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-colors duration-200"
-                aria-label="Twitter"
-              >
-                <Twitter
-                  className="w-5 h-5"
-                  style={{ color: "var(--color-foreground)" }}
-                />
-              </a>
-              <a
-                href="#"
-                className="text-muted-foreground hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-colors duration-200"
-                aria-label="GitHub"
-              >
-                <Github
-                  className="w-5 h-5"
-                  style={{ color: "var(--color-foreground)" }}
-                />
-              </a>
-              <a
-                href="#"
-                className="text-muted-foreground hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-colors duration-200"
-                aria-label="Discord"
-              >
-                <MessageCircle
-                  className="w-5 h-5"
-                  style={{ color: "var(--color-foreground)" }}
-                />
-              </a>
             </div>
           </div>
         </div>
