@@ -30,10 +30,10 @@ export default function CustomCard({
     React.SVGProps<SVGSVGElement>
   >;
   return (
-    <Card className="flex h-full w-full max-w-[350px] flex-col hover:scale-105 duration-500 p-6 shadow-none bg-gray-50">
+    <Card className="flex h-full w-full max-w-[350px] flex-col hover:scale-105 duration-500 p-6 shadow-none bg-sidebar">
       <CardHeader className="flex w-full flex-col items-start gap-3 px-0 pt-0 pb-4">
         <div className="w-fit rounded-lg p-3 bg-primary">
-          <IconComponent className="h-6 w-6 text-white" />
+          <IconComponent className="h-6 w-6 text-sidebar" />
         </div>
         <div className="space-y-2">
           <CardTitle className="text-xl font-bold">{title}</CardTitle>
@@ -56,7 +56,7 @@ export default function CustomCard({
         </ul>
       </CardContent>
       <CardFooter className="flex justify-center">
-        <Button className="text-primary w-full bg-gray-50 shadow-none border border-primary/50 hover:border-primary hover:bg-primary/10 cursor-pointer">
+        <Button className="text-primary w-full bg-sidebar shadow-none border border-primary/50 hover:border-primary hover:bg-primary/10 cursor-pointer">
           {buttonlabel}
         </Button>
       </CardFooter>

@@ -1,3 +1,4 @@
+import React from "react";
 import { Heart, Twitter, Github, MessageCircle, Sparkles } from "lucide-react";
 
 type NavItem = { label: string; href: string };
@@ -36,7 +37,7 @@ function NavColumn({ title, items }: { title: string; items: NavItem[] }) {
 }
 
 function SocialLinks() {
-  const links: { href: string; label: string; icon: JSX.Element }[] = [
+  const links: { href: string; label: string; icon: React.ReactElement }[] = [
     {
       href: "#",
       label: "Twitter",
@@ -71,7 +72,7 @@ function SocialLinks() {
   );
 }
 
-export default function Footer(): JSX.Element {
+export default function Footer(): React.ReactElement {
   const year = new Date().getFullYear();
 
   return (
