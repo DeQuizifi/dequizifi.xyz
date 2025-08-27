@@ -62,43 +62,55 @@ export default function Feature() {
   return (
     <section
       aria-labelledby="features-heading"
-      className="bg-sidebar-primary-foreground overflow-x-hidden min-h-screen"
+      className="bg-sidebar-primary-foreground overflow-x-hidden min-h-screen py-8 md:py-12 lg:py-16"
     >
       <h2 id="features-heading" className="sr-only">
         Core Features
       </h2>
-      <div className="w-full flex justify-center mt-4">
-        <span className="flex items-center px-1 py-0.5 gap-0.5 text-xs rounded-full bg-sidebar-primary-foreground text-foreground border border-chart-2 shadow-sm">
+
+      {/* Badge Section */}
+      <div className="w-full flex justify-center mb-6 md:mb-8">
+        <span className="flex items-center px-3 py-1.5 gap-1.5 text-sm font-medium rounded-full bg-sidebar-primary-foreground text-foreground border border-chart-2 shadow-sm hover:shadow-md transition-shadow duration-200">
           <span className="text-primary">
-            <Star className="w-5 h-5" aria-hidden />
+            <Star className="w-4 h-4 md:w-5 md:h-5" aria-hidden />
           </span>
           <span className="sr-only">Core Features</span>
           <span aria-hidden>Core Features</span>
         </span>
       </div>
 
-      <Header
-        title="Studio-Grade Experience"
-        subtitle="Every detail crafted for the modern crypto learner who values both substance and style."
-      />
+      {/* Header Section */}
+      <div className="mb-8 md:mb-12 lg:mb-16">
+        <Header
+          title="Studio-Grade Experience"
+          subtitle="Every detail crafted for the modern crypto learner who values both substance and style."
+        />
+      </div>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-6 justify-center items-center lg:items-start my-6">
+      {/* Feature Cards Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 md:mb-16 lg:mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10 justify-items-center">
           {FEATURE_CARDS.map((c) => (
-            <CustomCard key={c.title} {...c} />
+            <div key={c.title} className="w-full max-w-sm lg:max-w-none">
+              <CustomCard {...c} />
+            </div>
           ))}
         </div>
       </div>
 
-      <div className="flex flex-wrap items-center justify-center gap-20 my-8">
-        {footers.map((footer, index) => (
-          <Footer
-            key={index}
-            title={footer.title}
-            subtitle={footer.subtitle}
-            IconComponent={footer.IconComponent}
-          />
-        ))}
+      {/* Footer Items Section */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 lg:gap-16 justify-items-center">
+          {footers.map((footer, index) => (
+            <div key={index} className="w-full max-w-xs lg:max-w-none flex justify-center">
+              <Footer
+                title={footer.title}
+                subtitle={footer.subtitle}
+                IconComponent={footer.IconComponent}
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
