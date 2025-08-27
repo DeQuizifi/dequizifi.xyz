@@ -63,17 +63,19 @@ export default function About() {
         and design excellence.
       </p>
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-6 justify-center items-start max-w-6xl">
-        {cardData.map((card) => (
-          <CustomCard
-            key={card.title}
-            title={card.title}
-            subtitle={card.subtitle}
-            description={card.description}
-            features={card.features}
-            buttonlabel={card.buttonLabel}
-            icon={card.icon as CustomCardProps["icon"]}
-          />
-        ))}
+        {cardData.map(
+          ({ title, subtitle, description, features, buttonLabel, icon }) => (
+            <CustomCard
+              key={title}
+              title={title}
+              subtitle={subtitle}
+              description={description}
+              features={features}
+              buttonlabel={buttonLabel}
+              icon={icon as CustomCardProps["icon"]}
+            />
+          )
+        )}
       </div>
     </section>
   );
