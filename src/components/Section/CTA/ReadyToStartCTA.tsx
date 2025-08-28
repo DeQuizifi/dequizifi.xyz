@@ -1,54 +1,64 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 
-export default function ReadyToStartCTA() {
+type ReadyToStartCTAProps = {
+  onGetStarted?: () => void;
+  onViewDemo?: () => void;
+  getStartedLabel?: string;
+  viewDemoLabel?: string;
+};
+
+export default function ReadyToStartCTA({
+  onGetStarted,
+  onViewDemo,
+  getStartedLabel = "Get Started Now",
+  viewDemoLabel = "View Demo",
+}: ReadyToStartCTAProps) {
   return (
     <div className="flex flex-col items-center gap-4">
       <div className="flex justify-center gap-4">
-        <Button
-          aria-label="Get Started Now - Begin learning DeFi"
-          className="px-6"
-        >
-          Get Started Now
+        <Button type="button" className="px-6" onClick={onGetStarted}>
+          {getStartedLabel}
         </Button>
 
         <Button
-          aria-label="View Demo - Preview the quiz platform"
+          type="button"
           variant="secondary"
           className="px-6"
+          onClick={onViewDemo}
         >
-          View Demo
+          {viewDemoLabel}
         </Button>
       </div>
 
-      <div
+      <ul
         className="mt-4 flex items-center justify-center gap-6 text-sm"
         style={{ color: "var(--color-cta-description)" }}
       >
-        <div className="flex items-center gap-2">
+        <li className="flex items-center gap-2">
           <span
             className="inline-block w-2 h-2 rounded-full bg-[var(--color-cta-primary-bg)]"
             aria-hidden
           />
           <span>Free to start</span>
-        </div>
+        </li>
 
-        <div className="flex items-center gap-2">
+        <li className="flex items-center gap-2">
           <span
             className="inline-block w-2 h-2 rounded-full bg-[var(--color-cta-primary-bg)]"
             aria-hidden
           />
           <span>No credit card required</span>
-        </div>
+        </li>
 
-        <div className="flex items-center gap-2">
+        <li className="flex items-center gap-2">
           <span
             className="inline-block w-2 h-2 rounded-full bg-[var(--color-cta-primary-bg)]"
             aria-hidden
           />
           <span>Instant access</span>
-        </div>
-      </div>
+        </li>
+      </ul>
     </div>
   );
 }
