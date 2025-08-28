@@ -1,7 +1,9 @@
+import type { ReactNode } from "react";
+
 type HeaderProps = {
   title: string;
   subtitle?: string;
-  prelude?: React.ReactNode;
+  prelude?: ReactNode;
 };
 
 export default function Header({ title, subtitle, prelude }: HeaderProps) {
