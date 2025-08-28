@@ -31,15 +31,33 @@ const QuizCardPreview: React.FC<QuizCardPreviewProps> = ({
   onClose,
   questions = sampleQuestions,
 }) => {
+  // Accessibility: unique title id for aria-labelledby
+  const titleId = React.useId();
+  // Accessibility & UX: Esc-to-close and background scroll lock
+  React.useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", onKeyDown);
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = prev;
+    };
+  }, [onClose]);
   return (
     // Overlay: closes modal when clicked
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-[var(--popover-foreground)]/40"
       onClick={onClose}
-      aria-label="Close preview overlay"
+      aria-hidden="true"
     >
       <Card
         className="relative min-w-[300px] max-w-xs text-center shadow-lg bg-[var(--sidebar)]"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby={titleId}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close button */}
@@ -51,7 +69,9 @@ const QuizCardPreview: React.FC<QuizCardPreviewProps> = ({
           x
         </button>
         <CardHeader>
-          <CardTitle className="text-[var(--primary)] mb-2">{title}</CardTitle>
+          <CardTitle id={titleId} className="text-[var(--primary)] mb-2">
+            {title}
+          </CardTitle>
           {subtitle && (
             <CardDescription className="mb-2">{subtitle}</CardDescription>
           )}
