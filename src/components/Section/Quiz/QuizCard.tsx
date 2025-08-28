@@ -35,7 +35,7 @@ function QuizCard({
 
   return (
     <Card
-      className="shadow-sm border hover:shadow-md transition-all"
+      className="border border-[var(--border)] shadow-sm hover:shadow-lg hover:border-[var(--primary)] transition-all duration-200 hover:scale-105 bg-[var(--card)] hover:bg-[var(--card-hover)]"
       role="article"
       aria-labelledby={titleId}
       aria-describedby={subtitle ? descId : undefined}

@@ -25,7 +25,7 @@ export default function Quiz() {
         </p>
 
         {/* Top row: categories */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
           <QuizCard
             icon={
               <Wallet className="h-5 w-5 text-[var(--primary)]" aria-hidden />
@@ -54,7 +54,7 @@ export default function Quiz() {
 
         {/* CTA */}
         <div className="mt-10 flex flex-col items-center gap-4">
-          <Button className="px-8 py-6 text-base bg-gradient-to-r from-[var(--color-hero-gradient-from)] to-[var(--color-hero-gradient-to)] text-[var(--background)] hover:opacity-90">
+          <Button className="px-8 py-6 font-bold text-base bg-gradient-to-r from-[var(--color-hero-gradient-from)] to-[var(--color-hero-gradient-to)] text-[var(--background)] hover:opacity-90 transition-transform duration-200 hover:scale-110">
             Start Web3 Quizzes
           </Button>
           <p className="text-xs text-muted-foreground">
