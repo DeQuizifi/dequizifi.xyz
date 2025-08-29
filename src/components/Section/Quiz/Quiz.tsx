@@ -3,8 +3,25 @@
 import { Button } from "@/components/ui/button";
 import { Brain, Wallet, Network, Image as ImageIcon } from "lucide-react";
 import QuizCard from "./QuizCard";
+// Import the modal component for quiz card previews
+import QuizCardPreview from "./QuizCardPreview";
+import React, { useState } from "react";
 
 export default function Quiz() {
+  // State to track which quiz card is being previewed
+  const [preview, setPreview] = useState<{
+    title: string;
+    subtitle?: string;
+  } | null>(null);
+
+  // Handler to open the preview modal with quiz card details
+  const handlePreview = (title: string, subtitle?: string) => {
+    setPreview({ title, subtitle });
+  };
+
+  // Handler to close the preview modal
+  const closeModal = () => setPreview(null);
+
   return (
     <section className="w-full bg-[var(--background)]">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
@@ -25,6 +42,7 @@ export default function Quiz() {
         </p>
 
         {/* Top row: categories */}
+        {/* Quiz cards with preview functionality. Each card passes its details to the preview modal handler. */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
           <QuizCard
             icon={
@@ -32,6 +50,9 @@ export default function Quiz() {
             }
             title="DeFi Basics"
             subtitle="Lending, AMMs, governance"
+            onPreview={() =>
+              handlePreview("DeFi Basics", "Lending, AMMs, governance")
+            }
           />
           <QuizCard
             icon={
@@ -42,6 +63,9 @@ export default function Quiz() {
             }
             title="NFTs & Culture"
             subtitle="Ownership, royalties, metadata"
+            onPreview={() =>
+              handlePreview("NFTs & Culture", "Ownership, royalties, metadata")
+            }
           />
           <QuizCard
             icon={
@@ -49,6 +73,7 @@ export default function Quiz() {
             }
             title="Layer 2s"
             subtitle="Rollups, bridges, gas"
+            onPreview={() => handlePreview("Layer 2s", "Rollups, bridges, gas")}
           />
         </div>
 
@@ -62,6 +87,14 @@ export default function Quiz() {
           </p>
         </div>
       </div>
+      {/* Preview Modal: Shows when a quiz card's Preview button is clicked */}
+      {preview && (
+        <QuizCardPreview
+          title={preview.title}
+          subtitle={preview.subtitle}
+          onClose={closeModal}
+        />
+      )}
     </section>
   );
 }

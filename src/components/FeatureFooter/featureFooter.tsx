@@ -18,7 +18,7 @@ export default function Footer({
     <footer
       className={cn(
         "group relative flex flex-col items-center justify-center gap-4 text-center",
-        "py-8 transition-all duration-300 ease-out",
+        "py-6 transition-all duration-300 ease-out",
         className
       )}
     >
