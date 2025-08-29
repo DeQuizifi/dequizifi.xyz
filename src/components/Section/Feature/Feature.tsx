@@ -1,10 +1,19 @@
+import React from "react";
 import CustomCard from "@/components/common/CustomCard";
 import type { CustomCardProps } from "@/components/common/CustomCard";
 import Header from "@/components/Header/header";
 import Footer from "@/components/FeatureFooter/featureFooter";
 import { Star, GraduationCap, Trophy, Zap, Users } from "lucide-react";
 
-const footers = [
+type IconComponent = React.ComponentType<React.SVGProps<SVGSVGElement>>;
+
+interface FooterItem {
+  title: string;
+  subtitle: string;
+  IconComponent: IconComponent;
+}
+
+const FOOTERS: FooterItem[] = [
   {
     title: "Expert Content",
     subtitle: "Curated by DeFi professionals",
@@ -27,7 +36,7 @@ const footers = [
   },
 ];
 
-const FEATURE_CARDS = [
+const FEATURE_CARDS: ReadonlyArray<CustomCardProps> = [
   {
     icon: "Brain",
     buttonlabel: "Learn",
@@ -56,19 +65,17 @@ const FEATURE_CARDS = [
       "Join leaderboards, collect badges, challenge friends, and learn together in the Farcaster community.",
     features: ["Leaderboards", "Multiplayer", "Community"],
   },
-] as const satisfies ReadonlyArray<CustomCardProps>;
+];
 
-export default function Feature() {
+export default function Feature(): React.ReactElement {
   return (
     <section
       aria-labelledby="features-heading"
-      className="bg-sidebar-primary-foreground overflow-x-hidden min-h-screen py-8 md:py-12 lg:py-16"
+      className="overflow-x-hidden min-h-screen py-8 md:py-12 lg:py-16"
     >
       <h2 id="features-heading" className="sr-only">
         Core Features
       </h2>
-
-      {/* Badge Section */}
       <div className="w-full flex justify-center mb-6 md:mb-8">
         <span className="flex items-center px-3 py-1.5 gap-1.5 text-sm font-medium rounded-full bg-sidebar-primary-foreground text-foreground border border-chart-2 shadow-sm hover:shadow-md transition-shadow duration-200">
           <span className="text-primary">
@@ -79,7 +86,6 @@ export default function Feature() {
         </span>
       </div>
 
-      {/* Header Section */}
       <div className="mb-8 md:mb-12 lg:mb-16">
         <Header
           title="Studio-Grade Experience"
@@ -87,26 +93,24 @@ export default function Feature() {
         />
       </div>
 
-      {/* Feature Cards Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 md:mb-16 lg:mb-20">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10 justify-items-center">
-          {FEATURE_CARDS.map((c) => (
-            <div key={c.title} className="w-full max-w-sm lg:max-w-none">
-              <CustomCard {...c} />
+          {FEATURE_CARDS.map((card) => (
+            <div key={card.title} className="w-full max-w-sm lg:max-w-none">
+              <CustomCard {...card} />
             </div>
           ))}
         </div>
       </div>
 
-      {/* Footer Items Section */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 lg:gap-16 justify-items-center">
-          {footers.map((footer, index) => (
-            <div key={index} className="w-full">
+          {FOOTERS.map((f) => (
+            <div key={f.title} className="w-full">
               <Footer
-                title={footer.title}
-                subtitle={footer.subtitle}
-                IconComponent={footer.IconComponent}
+                title={f.title}
+                subtitle={f.subtitle}
+                IconComponent={f.IconComponent}
               />
             </div>
           ))}
