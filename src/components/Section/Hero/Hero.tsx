@@ -1,4 +1,5 @@
 import { HiOutlineBolt, HiOutlineStar } from "react-icons/hi2";
+import SectionBadge from "@/components/common/SectionBadge";
 
 function HeroStat({ value, label }: { value: string; label: string }) {
   return (
@@ -20,14 +21,7 @@ export default function Hero() {
     <section
       className="flex flex-col items-center justify-center min-h-screen mx-auto max-w-2xl px-4"
     >
-      <div
-        className="flex items-center gap-1 justify-center mb-6 mt-4 px-4 py-1 rounded-full text-xs border font-semibold shadow"
-      >
-        <span>
-          <HiOutlineStar />
-        </span>{" "}
-        Farcaster Native DeFi Education
-      </div>
+      <SectionBadge text="Farcaster Native DeFi Education" iconLeft={<HiOutlineStar />}/>
 
       <h1
         className="text-7xl md:text-7xl font-extrabold text-center mb-2"
