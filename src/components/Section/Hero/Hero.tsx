@@ -21,6 +21,7 @@ export default function Hero() {
     <section
       className="flex flex-col items-center justify-center min-h-screen mx-auto max-w-2xl px-4"
     >
+
       <SectionBadge text="Farcaster Native DeFi Education" iconLeft={<HiOutlineStar />}/>
 
       <h1
