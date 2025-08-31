@@ -9,7 +9,7 @@ type HeaderProps = {
 export default function Header({ title, subtitle, prelude }: HeaderProps) {
   return (
     <header
-      className="bg-sidebar-primary-foreground p-4"
+      className="p-4"
       aria-label="Page Header"
     >
       {prelude && (

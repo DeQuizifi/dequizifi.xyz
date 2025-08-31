@@ -34,11 +34,10 @@ export default function ReadyToStartCTA({
 
       <ul
         className="mt-4 flex items-center justify-center gap-6 text-sm"
-        style={{ color: "var(--color-cta-description)" }}
       >
         <li className="flex items-center gap-2">
           <span
-            className="inline-block w-2 h-2 rounded-full bg-[var(--color-cta-primary-bg)]"
+            className="inline-block w-2 h-2 rounded-full"
             aria-hidden
           />
           <span>Free to start</span>
@@ -46,7 +45,7 @@ export default function ReadyToStartCTA({
 
         <li className="flex items-center gap-2">
           <span
-            className="inline-block w-2 h-2 rounded-full bg-[var(--color-cta-primary-bg)]"
+            className="inline-block w-2 h-2 rounded-full"
             aria-hidden
           />
           <span>No credit card required</span>
@@ -54,7 +53,7 @@ export default function ReadyToStartCTA({
 
         <li className="flex items-center gap-2">
           <span
-            className="inline-block w-2 h-2 rounded-full bg-[var(--color-cta-primary-bg)]"
+            className="inline-block w-2 h-2 rounded-full"
             aria-hidden
           />
           <span>Instant access</span>
