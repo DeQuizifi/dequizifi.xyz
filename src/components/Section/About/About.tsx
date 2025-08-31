@@ -44,21 +44,21 @@ const cardData: Array<
 
 export default function About() {
   return (
-    <section className="w-full bg-[var(--background)] flex flex-col items-center py-20 px-4">
+    <section className="w-full bg-background flex flex-col items-center py-20 px-4">
       <div className="mb-4 flex items-center">
-        <span className="bg-[var(--color-about-badge-bg)] text-[var(--color-about-badge-text)] px-3 py-1 rounded-full text-xs font-semibold tracking-wide">
+        <span className="px-3 py-1 rounded-full text-xs font-semibold tracking-wide">
           <span aria-label="Perfect For" role="text">
             ⚡ Perfect For
           </span>
         </span>
       </div>
       <h2
-        className="text-[42px] leading-tight md:text-5xl font-extrabold text-center mb-4 aboutHeadingGradient"
+        className="text-[42px] leading-tight md:text-5xl font-extrabold text-center mb-4"
         aria-label="Who Is DeQuizify For?"
       >
         Who Is DeQuizify For?
       </h2>
-      <p className="text-[var(--color-about-description)] text-center mb-14 max-w-3xl text-sm md:text-base leading-relaxed">
+      <p className="text-center mb-14 max-w-3xl text-sm md:text-base leading-relaxed">
         Built for the modern crypto community that values both learning depth
         and design excellence.
       </p>

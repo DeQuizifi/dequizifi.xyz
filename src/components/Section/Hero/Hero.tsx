@@ -5,11 +5,10 @@ function HeroStat({ value, label }: { value: string; label: string }) {
     <div className="text-center">
       <span
         className="block text-2xl font-bold"
-        style={{ color: "var(--primary)" }}
       >
         {value}
       </span>
-      <span className="text-sm" style={{ color: "var(--color-hero-muted)" }}>
+      <span className="text-sm">
         {label}
       </span>
     </div>
@@ -20,15 +19,9 @@ export default function Hero() {
   return (
     <section
       className="flex flex-col items-center justify-center min-h-screen mx-auto max-w-2xl px-4"
-      style={{ background: "var(--background)" }}
     >
       <div
         className="flex items-center gap-1 justify-center mb-6 mt-4 px-4 py-1 rounded-full text-xs border font-semibold shadow"
-        style={{
-          background: "var(--card)",
-          color: "var(--primary)",
-          borderColor: "var(--border)",
-        }}
       >
         <span>
           <HiOutlineStar />
@@ -38,21 +31,18 @@ export default function Hero() {
 
       <h1
         className="text-7xl md:text-7xl font-extrabold text-center mb-2"
-        style={{ color: "var(--primary-foreground)" }}
       >
         Learn DeFi,
       </h1>
 
       <h2
         className="text-5xl md:text-5xl font-extrabold text-center mb-4"
-        style={{ color: "var(--foreground)" }}
       >
         Earn Rewards
       </h2>
 
       <p
         className="text-xl text-center max-w-2xl mb-8 mt-5"
-        style={{ color: "var(--color-hero-muted)" }}
       >
         Master DeFi through engaging quizzes, earn tokens, collect badges, and
         join the most elegant crypto education platform built for the Farcaster

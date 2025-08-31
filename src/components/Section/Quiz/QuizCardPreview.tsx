@@ -49,12 +49,12 @@ const QuizCardPreview: React.FC<QuizCardPreviewProps> = ({
   return (
     // Overlay: closes modal when clicked
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-[var(--popover-foreground)]/40"
+      className="fixed inset-0 z-50 flex items-center justify-center"
       onClick={onClose}
       aria-hidden="true"
     >
       <Card
-        className="relative min-w-[300px] max-w-xs text-center shadow-lg bg-[var(--sidebar)]"
+        className="relative min-w-[300px] max-w-xs text-center shadow-lg"
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
@@ -62,14 +62,14 @@ const QuizCardPreview: React.FC<QuizCardPreviewProps> = ({
       >
         {/* Close button */}
         <button
-          className="absolute top-2 right-2 font-bold text-[var(--muted-foreground)] hover:text-[var(--foreground)] text-xl"
+          className="absolute top-2 right-2 font-bold text-xl"
           onClick={onClose}
           aria-label="Close preview"
         >
           x
         </button>
         <CardHeader>
-          <CardTitle id={titleId} className="text-[var(--primary)] mb-2">
+          <CardTitle id={titleId} className="text-primary mb-2">
             {title}
           </CardTitle>
           {subtitle && (
@@ -77,20 +77,20 @@ const QuizCardPreview: React.FC<QuizCardPreviewProps> = ({
           )}
         </CardHeader>
         <CardContent>
-          <p className="text-xs text-[var(--muted-foreground)] mb-2">
+          <p className="text-xs text-muted-foreground mb-2">
             This is a quick preview of the quiz topic.
           </p>
           {/* Sample questions */}
           {questions.length > 0 && (
             <div className="mt-4 text-left">
-              <div className="text-sm font-semibold mb-2 text-[var(--primary)]">
+              <div className="text-sm font-semibold mb-2 text-primary">
                 Sample Questions:
               </div>
               <ul className="list-disc pl-5 space-y-1">
                 {questions.map((q, i) => (
                   <li
                     key={i}
-                    className="text-xs text-[var(--muted-foreground)] font-bold"
+                    className="text-xs text-muted-foreground font-bold"
                   >
                     {q}
                   </li>

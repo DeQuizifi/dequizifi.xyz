@@ -35,14 +35,14 @@ function QuizCard({
 
   return (
     <Card
-      className="border border-[var(--border)] shadow-sm hover:shadow-lg hover:border-[var(--primary)] transition-all duration-200 hover:scale-105 bg-[var(--card)] hover:bg-[var(--card-hover)]"
+      className="shadow-sm hover:shadow-lg hover:border-primary transition-all duration-200 hover:scale-105"
       role="article"
       aria-labelledby={titleId}
       aria-describedby={subtitle ? descId : undefined}
     >
       <CardHeader className="px-5">
         <div className="flex items-center gap-3">
-          <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-[var(--card)] border border-[var(--border)]">
+          <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg">
             {icon}
           </span>
           <div className="leading-tight">
@@ -61,13 +61,13 @@ function QuizCard({
         <Separator className="my-4 opacity-60" />
         <div className="flex items-center justify-between text-sm">
           <span className="text-muted-foreground">Questions</span>
-          <span className="font-semibold text-[var(--primary-foreground)]">
+          <span className="font-semibold">
             {questionCount}
           </span>
         </div>
         <div className="mt-2 flex items-center justify-between text-sm">
           <span className="text-muted-foreground">Est. time</span>
-          <span className="font-semibold text-[var(--primary-foreground)]">
+          <span className="font-semibold">
             {estimatedTime}
           </span>
         </div>
@@ -76,7 +76,7 @@ function QuizCard({
         <Button
           type="button"
           variant="outline"
-          className="w-full border-[var(--border)] hover:bg-accent/50"
+          className="w-full hover:bg-accent/50"
           aria-label={`Explore ${title} quiz`}
           onClick={onPreview}
         >
