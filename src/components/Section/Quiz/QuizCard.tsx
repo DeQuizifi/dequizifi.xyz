@@ -17,8 +17,12 @@ interface QuizCardProps {
   questionCount?: number | string;
   /** Estimated time string; defaults to "5–7 min" */
   estimatedTime?: string;
-  /** Optional preview click handler */
-  onPreview?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  /** Optional preview click handler, receives position */
+  onPreview?: (
+    position: { top: number; left: number },
+    title: string,
+    subtitle?: string
+  ) => void;
 }
 
 function QuizCard({
@@ -32,9 +36,21 @@ function QuizCard({
   const id = useId();
   const titleId = `quizcard-${id}-title`;
   const descId = `quizcard-${id}-desc`;
+  const cardRef = React.useRef<HTMLDivElement>(null);
+
+  const handlePreviewClick = () => {
+    if (cardRef.current && onPreview) {
+      const rect = cardRef.current.getBoundingClientRect();
+      // Adjust for scroll position
+      const top = rect.top + window.scrollY;
+      const left = rect.left + window.scrollX;
+      onPreview({ top, left }, title, subtitle);
+    }
+  };
 
   return (
     <Card
+      ref={cardRef}
       className="shadow-sm hover:shadow-lg hover:border-primary transition-all duration-200 hover:scale-105"
       role="article"
       aria-labelledby={titleId}
@@ -61,15 +77,11 @@ function QuizCard({
         <Separator className="my-4 opacity-60" />
         <div className="flex items-center justify-between text-sm">
           <span className="text-muted-foreground">Questions</span>
-          <span className="font-semibold">
-            {questionCount}
-          </span>
+          <span className="font-semibold">{questionCount}</span>
         </div>
         <div className="mt-2 flex items-center justify-between text-sm">
           <span className="text-muted-foreground">Est. time</span>
-          <span className="font-semibold">
-            {estimatedTime}
-          </span>
+          <span className="font-semibold">{estimatedTime}</span>
         </div>
       </CardContent>
       <CardFooter className="pt-0">
@@ -78,7 +90,7 @@ function QuizCard({
           variant="outline"
           className="w-full hover:bg-accent/50"
           aria-label={`Explore ${title} quiz`}
-          onClick={onPreview}
+          onClick={handlePreviewClick}
         >
           Preview
         </Button>
