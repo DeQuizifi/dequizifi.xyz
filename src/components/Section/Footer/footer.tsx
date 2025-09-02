@@ -84,16 +84,10 @@ export default function Footer(): React.ReactElement {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
           <div className="md:col-span-2 space-y-4">
             <div className="flex items-center">
-              <div
-                className="w-14 h-14 bg-gradient-to-br rounded-2xl flex items-center justify-center"
-              >
-                <Sparkles
-                  className="w-8 h-8"
-                />
+              <div className="w-14 h-14 bg-gradient-to-br rounded-2xl flex items-center justify-center">
+                <Sparkles className="w-8 h-8" />
               </div>
-              <span
-                className="ml-4 text-4xl font-extrabold footer-brand-gradient"
-              >
+              <span className="ml-4 text-4xl font-extrabold footer-brand-gradient">
                 DeQuiziFi
               </span>
             </div>
@@ -105,9 +99,7 @@ export default function Footer(): React.ReactElement {
             </p>
 
             <div className="inline-block">
-              <span
-                className="rounded-full px-5 py-1 text-sm font-semibold shadow-sm"
-              >
+              <span className="rounded-full px-5 py-1 text-sm font-semibold shadow-sm">
                 Farcaster Native on DeQuiziFi
               </span>
             </div>
@@ -123,9 +115,7 @@ export default function Footer(): React.ReactElement {
 
             <div className="flex items-center space-x-1 text-sm text-muted-foreground order-2 w-full sm:w-auto justify-start">
               <span>© {year} DeQuiziFi. Built with</span>
-              <Heart
-                className="w-4 h-4 fill-current"
-              />
+              <Heart className="w-4 h-4 fill-current" style={{ color: "var(--color-footer-heart)" }}/>
               <span>for the crypto community on DeQuiziFi.</span>
             </div>
           </div>

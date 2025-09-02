@@ -8,15 +8,20 @@ import QuizCardPreview from "./QuizCardPreview";
 import React, { useState } from "react";
 
 export default function Quiz() {
-  // State to track which quiz card is being previewed
+  // State to track which quiz card is being previewed and its position
   const [preview, setPreview] = useState<{
     title: string;
     subtitle?: string;
+    position: { top: number; left: number };
   } | null>(null);
 
-  // Handler to open the preview modal with quiz card details
-  const handlePreview = (title: string, subtitle?: string) => {
-    setPreview({ title, subtitle });
+  // Handler to open the preview modal with quiz card details and position
+  const handlePreview = (
+    position: { top: number; left: number },
+    title: string,
+    subtitle?: string
+  ) => {
+    setPreview({ title, subtitle, position });
   };
 
   // Handler to close the preview modal
@@ -45,35 +50,22 @@ export default function Quiz() {
         {/* Quiz cards with preview functionality. Each card passes its details to the preview modal handler. */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
           <QuizCard
-            icon={
-              <Wallet className="h-5 w-5" aria-hidden />
-            }
+            icon={<Wallet className="h-5 w-5" aria-hidden />}
             title="DeFi Basics"
             subtitle="Lending, AMMs, governance"
-            onPreview={() =>
-              handlePreview("DeFi Basics", "Lending, AMMs, governance")
-            }
+            onPreview={handlePreview}
           />
           <QuizCard
-            icon={
-              <ImageIcon
-                className="h-5 w-5"
-                aria-hidden
-              />
-            }
+            icon={<ImageIcon className="h-5 w-5" aria-hidden />}
             title="NFTs & Culture"
             subtitle="Ownership, royalties, metadata"
-            onPreview={() =>
-              handlePreview("NFTs & Culture", "Ownership, royalties, metadata")
-            }
+            onPreview={handlePreview}
           />
           <QuizCard
-            icon={
-              <Network className="h-5 w-5" aria-hidden />
-            }
+            icon={<Network className="h-5 w-5" aria-hidden />}
             title="Layer 2s"
             subtitle="Rollups, bridges, gas"
-            onPreview={() => handlePreview("Layer 2s", "Rollups, bridges, gas")}
+            onPreview={handlePreview}
           />
         </div>
 
@@ -93,6 +85,7 @@ export default function Quiz() {
           title={preview.title}
           subtitle={preview.subtitle}
           onClose={closeModal}
+          position={preview.position}
         />
       )}
     </section>

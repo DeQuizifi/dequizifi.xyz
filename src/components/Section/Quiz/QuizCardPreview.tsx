@@ -21,6 +21,7 @@ interface QuizCardPreviewProps {
   subtitle?: string;
   onClose: () => void;
   questions?: string[];
+  position?: { top: number; left: number };
 }
 
 // QuizCardPreview modal component
@@ -30,6 +31,7 @@ const QuizCardPreview: React.FC<QuizCardPreviewProps> = ({
   subtitle,
   onClose,
   questions = sampleQuestions,
+  position,
 }) => {
   // Accessibility: unique title id for aria-labelledby
   const titleId = React.useId();
@@ -39,15 +41,93 @@ const QuizCardPreview: React.FC<QuizCardPreviewProps> = ({
       if (e.key === "Escape") onClose();
     };
     window.addEventListener("keydown", onKeyDown);
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
+    let prev: string | undefined;
+    // Only lock scroll for centered modal
+    if (!position) {
+      prev = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+    }
     return () => {
       window.removeEventListener("keydown", onKeyDown);
-      document.body.style.overflow = prev;
+      if (!position && prev !== undefined) {
+        document.body.style.overflow = prev;
+      }
     };
-  }, [onClose]);
+  }, [onClose, position]);
+  // If position is provided, render absolutely at that position
+  const style = position
+    ? {
+        position: "absolute" as const,
+        top: position.top,
+        left: position.left,
+        zIndex: 1000,
+      }
+    : undefined;
+
+  if (position) {
+    // Render overlay and absolutely positioned card
+    return (
+      <>
+        {/* Full-screen overlay for outside click */}
+        <div
+          className="fixed inset-0 z-40 bg-black/10"
+          onClick={onClose}
+          aria-hidden="true"
+        />
+        <div style={style} className="">
+          <Card
+            className="relative min-w-[300px] max-w-xs text-center shadow-lg z-50"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby={titleId}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close button */}
+            <button
+              className="absolute top-2 right-2 font-bold text-xl"
+              onClick={onClose}
+              aria-label="Close preview"
+            >
+              x
+            </button>
+            <CardHeader>
+              <CardTitle id={titleId} className="text-primary mb-2">
+                {title}
+              </CardTitle>
+              {subtitle && (
+                <CardDescription className="mb-2">{subtitle}</CardDescription>
+              )}
+            </CardHeader>
+            <CardContent>
+              <p className="text-xs text-muted-foreground mb-2">
+                This is a quick preview of the quiz topic.
+              </p>
+              {/* Sample questions */}
+              {questions.length > 0 && (
+                <div className="mt-4 text-left">
+                  <div className="text-sm font-semibold mb-2 text-primary">
+                    Sample Questions:
+                  </div>
+                  <ul className="list-disc pl-5 space-y-1">
+                    {questions.map((q, i) => (
+                      <li
+                        key={i}
+                        className="text-xs text-muted-foreground font-bold"
+                      >
+                        {q}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </CardContent>
+          </Card>
+        </div>
+      </>
+    );
+  }
+  // Fallback: centered modal
   return (
-    // Overlay: closes modal when clicked
     <div
       className="fixed inset-0 z-50 flex items-center justify-center"
       onClick={onClose}
