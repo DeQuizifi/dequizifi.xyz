@@ -1,8 +1,8 @@
 import React from "react";
 import CustomCard from "@/components/common/CustomCard";
 import type { CustomCardProps } from "@/components/common/CustomCard";
-import Header from "@/components/Header/header";
-import Footer from "@/components/FeatureFooter/featureFooter";
+import Header from "@/components/common/header";
+import Footer from "@/components/common/featureFooter";
 import { Star, GraduationCap, Trophy, Zap, Users } from "lucide-react";
 
 type IconComponent = React.ComponentType<React.SVGProps<SVGSVGElement>>;

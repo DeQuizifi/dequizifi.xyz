@@ -1,4 +1,4 @@
-import Header from "@/components/Header/header";
+import Header from "@/components/common/header";
 import { Sparkles } from "lucide-react";
 
 export default function ReadyToStartTitle() {
