@@ -20,7 +20,7 @@ export default function Navbar(): React.ReactElement {
         }}
       >
         <div className="navbar-brand">
-          <Link href="/">DeQuizifi</Link>
+          <Link href="/">DeQuiziFi</Link>
         </div>
 
         <div className="navbar-links" style={{ display: "flex", gap: "1rem" }}>
