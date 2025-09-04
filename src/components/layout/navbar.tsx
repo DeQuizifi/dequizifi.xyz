@@ -63,7 +63,7 @@ const Navigation = () => {
 
   return (
     <>
-  <style>{sparkleKeyframes}</style>
+      <style>{sparkleKeyframes}</style>
       <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-hero-gradient-from/80 to-hero-gradient-to/80 backdrop-blur-md border-b border-border/20">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
@@ -127,6 +127,48 @@ const Navigation = () => {
           </div>
         </div>
       </nav>
+
+      {/* Mobile Navigation */}
+      {isMenuOpen && (
+        <div className="md:hidden mt-16 py-4 border-t border-border/20 bg-background/90 backdrop-blur-sm">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-col space-y-4">
+              <a
+                href="#features"
+                className="text-foreground hover:text-foreground/80 transition-colors"
+              >
+                Features
+              </a>
+              <a
+                href="#testimonials"
+                className="text-foreground hover:text-foreground/80 transition-colors"
+              >
+                Testimonials
+              </a>
+              <a
+                href="#stats"
+                className="text-foreground hover:text-foreground/80 transition-colors"
+              >
+                Stats
+              </a>
+              <a
+                href="#faq"
+                className="text-foreground hover:text-foreground/80 transition-colors"
+              >
+                FAQ
+              </a>
+              <div className="flex flex-col space-y-2 pt-4">
+                <Button variant="ghost" size="sm">
+                  Sign In
+                </Button>
+                <Button variant="gradient" size="sm">
+                  Get Started
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };
