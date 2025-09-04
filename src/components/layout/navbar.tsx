@@ -117,6 +117,8 @@ const Navigation = () => {
               className="md:hidden p-2"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
             >
               {isMenuOpen ? (
                 <X className="w-6 h-6" />
@@ -130,7 +132,10 @@ const Navigation = () => {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden mt-16 py-4 border-t border-border/20 bg-background/90 backdrop-blur-sm">
+        <div
+          id="mobile-menu"
+          className="md:hidden mt-16 py-4 border-t border-border/20 bg-background/90 backdrop-blur-sm"
+        >
           <div className="container mx-auto px-4">
             <div className="flex flex-col space-y-4">
               <a

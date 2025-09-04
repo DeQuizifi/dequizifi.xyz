@@ -49,11 +49,21 @@ function Button({
   }) {
   const Comp = asChild ? Slot : "button";
 
+  const variantClasses = buttonVariants({ variant, size });
+
+  // If not rendering as child, ensure the element is a safe button that won't
+  // implicitly submit a surrounding form by defaulting type to "button" when
+  // no type is provided by the consumer.
+  const safeProps = { ...(props as Record<string, unknown>) };
+  if (!asChild && safeProps.type === undefined) {
+    (safeProps as Record<string, unknown>).type = "button";
+  }
+
   return (
     <Comp
       data-slot="button"
-      className={cn(buttonVariants({ variant, size, className }))}
-      {...props}
+      className={cn(variantClasses, className)}
+      {...(safeProps as React.ComponentProps<"button">)}
     />
   );
 }
