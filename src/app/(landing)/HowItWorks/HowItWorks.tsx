@@ -97,13 +97,10 @@ const HowItWorks: React.FC = () => {
         </div>
 
         {/* Steps Grid */}
-        <ul
-          role="list"
-          aria-label="How it works steps"
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
-        >
+        {/* Steps Grid */}
+        <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {steps.map((step, i) => {
-            const Icon = step.icon as React.ElementType;
+            const Icon = step.icon;
             return (
               <li key={step.id}>
                 <HowItWorksCard
@@ -117,8 +114,7 @@ const HowItWorks: React.FC = () => {
               </li>
             );
           })}
-        </ul>
-      </div>
+        </ol>
     </section>
   );
 };
