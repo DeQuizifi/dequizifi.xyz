@@ -1,9 +1,20 @@
+import React from "react";
 import { BookOpen, Trophy, Users, Zap } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import HowItWorksCard from "../../../components/landing/HowItWorksCard";
+import HowItWorksCard from "@/components/landing/HowItWorksCard";
 
-const steps = [
+type Step = {
+  id: string;
+  icon: React.ElementType;
+  title: string;
+  description: string;
+  color: string;
+  delay?: string;
+};
+
+const steps: Step[] = [
   {
+    id: "learn",
     icon: BookOpen,
     title: "Learn & Study",
     description:
@@ -12,6 +23,7 @@ const steps = [
     delay: "0ms",
   },
   {
+    id: "quiz",
     icon: Zap,
     title: "Take Quizzes",
     description:
@@ -20,6 +32,7 @@ const steps = [
     delay: "200ms",
   },
   {
+    id: "rewards",
     icon: Trophy,
     title: "Earn Rewards",
     description:
@@ -28,6 +41,7 @@ const steps = [
     delay: "400ms",
   },
   {
+    id: "community",
     icon: Users,
     title: "Join Community",
     description:
@@ -37,16 +51,23 @@ const steps = [
   },
 ];
 
-const HowItWorks = () => {
+const HowItWorks: React.FC = () => {
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section
+      aria-labelledby="how-it-works-heading"
+      className="py-20 relative overflow-hidden"
+    >
       {/* Background */}
       <div className="absolute inset-0 gradient-secondary opacity-50" />
       <div className="absolute inset-0 bg-grid-pattern opacity-20" />
 
-      {/* Floating decorative elements */}
-      <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-gradient-to-r from-primary/20 to-accent/20 floating-animation blur-xl" />
+      {/* Floating decorative elements (purely decorative) */}
       <div
+        aria-hidden
+        className="absolute top-20 left-10 w-32 h-32 rounded-full bg-gradient-to-r from-primary/20 to-accent/20 floating-animation blur-xl"
+      />
+      <div
+        aria-hidden
         className="absolute bottom-20 right-10 w-40 h-40 rounded-full bg-gradient-to-r from-accent/20 to-primary/20 floating-animation blur-xl"
         style={{ animationDelay: "3s" }}
       />
@@ -60,7 +81,10 @@ const HowItWorks = () => {
           >
             Simple Process
           </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2
+            id="how-it-works-heading"
+            className="text-4xl md:text-5xl font-bold mb-6"
+          >
             How It{" "}
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               Works
@@ -73,22 +97,27 @@ const HowItWorks = () => {
         </div>
 
         {/* Steps Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {steps.map((step, index) => {
+        <ul
+          role="list"
+          aria-label="How it works steps"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+        >
+          {steps.map((step, i) => {
             const Icon = step.icon as React.ElementType;
             return (
-              <HowItWorksCard
-                key={index}
-                icon={Icon}
-                title={step.title}
-                description={step.description}
-                color={step.color}
-                delay={step.delay}
-                index={index}
-              />
+              <li key={step.id}>
+                <HowItWorksCard
+                  icon={Icon}
+                  title={step.title}
+                  description={step.description}
+                  color={step.color}
+                  delay={step.delay}
+                  index={i}
+                />
+              </li>
             );
           })}
-        </div>
+        </ul>
       </div>
     </section>
   );
