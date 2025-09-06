@@ -115,6 +115,7 @@ const HowItWorks: React.FC = () => {
             );
           })}
         </ol>
+        </div>
     </section>
   );
 };
