@@ -1,7 +1,7 @@
-import React from "react";
-import { BookOpen, Trophy, Users, Zap } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
 import HowItWorksCard from "@/components/landing/HowItWorksCard";
+import { Badge } from "@/components/ui/badge";
+import { BookOpen, Trophy, Users, Zap } from "lucide-react";
+import React from "react";
 
 type Step = {
   id: string;
@@ -115,6 +115,7 @@ const HowItWorks: React.FC = () => {
             );
           })}
         </ol>
+      </div>
     </section>
   );
 };
