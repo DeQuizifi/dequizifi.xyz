@@ -12,7 +12,7 @@ type TestimonialType = {
   handle: string;
   role: string;
   badge: string;
-  badgeStyle?: string;
+  badgeStyle?: string; // Optional, as it may be missing
 };
 
 export default function TestimonialCard({
@@ -53,7 +53,7 @@ export default function TestimonialCard({
           </div>
 
           <span
-            className={`inline-block rounded-full px-3 py-1 text-sm font-medium ${testimonial.badgeStyle}`}
+            className={`inline-block rounded-full px-3 py-1 text-sm font-medium${testimonial.badgeStyle ? ` ${testimonial.badgeStyle}` : ''}`}
           >
             {testimonial.badge}
           </span>
