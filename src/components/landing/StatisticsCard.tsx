@@ -1,7 +1,8 @@
 import React from "react";
+import type { LucideIcon } from "lucide-react";
 
 interface Stat {
-  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  icon: LucideIcon;
   number: string;
   title: string;
   description: string;
