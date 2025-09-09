@@ -1,65 +1,70 @@
 import React from "react";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Users, BookOpen, Award, Coins, TrendingUp, Globe } from "lucide-react";
 import StatisticsCard from "@/components/landing/StatisticsCard";
+import { Users, BookOpen, Award, Coins, TrendingUp, Globe } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+type IconComponent = React.ComponentType<React.SVGProps<SVGSVGElement>>;
+
+const stats: Array<{
+  icon: IconComponent;
+  number: string;
+  title: string;
+  description?: string;
+}> = [
+  {
+    icon: Users,
+    number: "15,000+",
+    title: "Active Learners",
+    description: "Growing community of DeFi enthusiasts",
+  },
+  {
+    icon: BookOpen,
+    number: "200+",
+    title: "Interactive Quizzes",
+    description: "Covering all major DeFi protocols",
+  },
+  {
+    icon: Award,
+    number: "85+",
+    title: "Unique Badges",
+    description: "Collectible achievements to unlock",
+  },
+  {
+    icon: Coins,
+    number: "1M+",
+    title: "Tokens Earned",
+    description: "Rewarded to our community",
+  },
+  {
+    icon: TrendingUp,
+    number: "95%",
+    title: "Completion Rate",
+    description: "Students who finish courses",
+  },
+  {
+    icon: Globe,
+    number: "50+",
+    title: "Countries",
+    description: "Global DeFi education reach",
+  },
+];
 
 const Statistics: React.FC = () => {
-  const stats = [
-    {
-      icon: Users,
-      number: "15,000+",
-      title: "Active Learners",
-      description: "Growing community of DeFi enthusiasts",
-    },
-    {
-      icon: BookOpen,
-      number: "200+",
-      title: "Interactive Quizzes",
-      description: "Covering all major DeFi protocols",
-    },
-    {
-      icon: Award,
-      number: "85+",
-      title: "Unique Badges",
-      description: "Collectible achievements to unlock",
-    },
-    {
-      icon: Coins,
-      number: "1M+",
-      title: "Tokens Earned",
-      description: "Rewarded to our community",
-    },
-    {
-      icon: TrendingUp,
-      number: "95%",
-      title: "Completion Rate",
-      description: "Students who finish courses",
-    },
-    {
-      icon: Globe,
-      number: "50+",
-      title: "Countries",
-      description: "Global DeFi education reach",
-    },
-  ];
-
   return (
     <section
       aria-labelledby="statistics-heading"
-      className="py-16 lg:py-24  relative overflow-hidden"
+      className="py-16 lg:py-24 relative overflow-hidden"
     >
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-muted/50 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-muted/40 to-transparent pointer-events-none" />
 
-      <div className="container mx-auto px-4 relative max-w-6xl">
-        {/* Header Section */}
+      <div className="mx-auto px-4 relative max-w-6xl">
         <div className="text-center mb-16">
           <Badge
             variant="secondary"
-            className="mb-6 px-4 py-2 text-sm font-medium bg-muted/60 text-muted-foreground border-0 rounded-full"
+            className="mb-6 px-4 py-2 text-sm font-medium bg-muted/60 text-muted-foreground rounded-full border-0"
           >
-            📊 Platform Metrics
+            Platform Metrics
           </Badge>
 
           <h2
@@ -67,7 +72,7 @@ const Statistics: React.FC = () => {
             className="text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 tracking-tight"
           >
             Powering DeFi Education{" "}
-            <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary via-purple-500 to-primary bg-clip-text text-transparent">
               Globally
             </span>
           </h2>
@@ -78,13 +83,19 @@ const Statistics: React.FC = () => {
           </p>
         </div>
 
-        {/* Statistics Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16">
-          {stats.map((stat, index) => {
-            return <StatisticsCard key={index} stat={stat} />;
-          })}
+          {stats.map((s, i) => (
+            <StatisticsCard
+              key={s.title + i}
+              icon={s.icon}
+              number={s.number}
+              title={s.title}
+              description={s.description}
+            />
+          ))}
         </div>
 
+        {/* CTA intentionally removed per design — keep this area for future inline CTA if needed */}
         {/* CTA: Join button + caption */}
         <div className="flex flex-col items-center mt-4 mb-12 relative">
           {/* Subtle decorative gradient behind the button that uses theme tokens (no hardcoded colors) */}
