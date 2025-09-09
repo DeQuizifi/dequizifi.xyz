@@ -66,7 +66,7 @@ const Statistics: React.FC = () => {
             className="text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 tracking-tight"
           >
             Powering DeFi Education{" "}
-            <span className="bg-gradient-to-r from-primary via-purple-500 to-primary bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
               Globally
             </span>
           </h2>
