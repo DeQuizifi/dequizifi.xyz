@@ -70,14 +70,23 @@ const Partnership = () => {
               <Badge
                 key={cat}
                 variant={active ? "default" : "secondary"}
-                className={`px-4 py-2 cursor-pointer hover:scale-105 transition-transform duration-150 ${
-                  active ? "bg-primary text-background" : ""
-                }`}
-                onClick={() => setSelected(cat)}
+                aria-pressed={active}
                 role="button"
                 tabIndex={0}
+                className={`px-4 py-2 cursor-pointer ${
+                  active ? "bg-primary text-background" : ""
+                } motion-safe:hover:scale-105 motion-safe:transition-transform motion-safe:duration-150 motion-reduce:transform-none motion-reduce:transition-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary`}
+                onClick={() => setSelected(cat)}
                 onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") setSelected(cat);
+                  // Prevent page scroll when using Space to activate the chip
+                  if (e.key === " ") {
+                    e.preventDefault();
+                    setSelected(cat);
+                  }
+
+                  if (e.key === "Enter") {
+                    setSelected(cat);
+                  }
                 }}
               >
                 {cat}
