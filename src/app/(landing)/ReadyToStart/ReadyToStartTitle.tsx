@@ -1,4 +1,5 @@
 import { Badge } from "@/components/ui/badge";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export default function ReadyToStartTitle() {
@@ -27,35 +28,52 @@ export default function ReadyToStartTitle() {
       </p>
 
       <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-        <button
-          type="button"
-          className="group font-semibold w-full sm:w-56 px-6 sm:px-5 py-3 sm:py-2 rounded-xl shadow-lg transition-transform duration-200 bg-gradient-to-r from-[var(--color-hero-gradient-from)] to-[var(--color-hero-gradient-to)] text-background hover:scale-105 hover:shadow-xl hover:opacity-90 text-base sm:text-sm whitespace-nowrap flex items-center justify-center gap-2"
+        <Link
+          href="/learn"
+          role="button"
+          aria-label="Start Learning Now - navigate to learning content"
+          className="group font-semibold w-full sm:w-56 px-6 sm:px-5 py-3 sm:py-2 rounded-xl shadow-lg transition-transform duration-200 bg-gradient-to-r from-[var(--color-hero-gradient-from)] to-[var(--color-hero-gradient-to)] text-white hover:scale-105 hover:shadow-xl hover:opacity-90 text-base sm:text-sm whitespace-nowrap flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
         >
           Start Learning Now
-          <ArrowRight className="w-4 h-4 sm:w-3 sm:h-3 group-hover:translate-x-1 transition-transform" />
-        </button>
-        <button
-          type="button"
-          className="font-semibold w-full sm:w-56 px-6 sm:px-5 py-3 sm:py-2 rounded-xl transition-transform duration-200 border border-border/20 text-foreground hover:scale-105 hover:shadow-sm text-base sm:text-sm whitespace-nowrap flex items-center justify-center"
+          <ArrowRight
+            aria-hidden="true"
+            className="w-4 h-4 sm:w-3 sm:h-3 group-hover:translate-x-1 transition-transform"
+          />
+        </Link>
+
+        <Link
+          href="/explore"
+          role="button"
+          aria-label="Explore Platform - view platform features"
+          className="font-semibold w-full sm:w-56 px-6 sm:px-5 py-3 sm:py-2 rounded-xl transition-transform duration-200 border border-border/20 text-foreground hover:scale-105 hover:shadow-sm text-base sm:text-sm whitespace-nowrap flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
         >
           Explore Platform
-        </button>
+        </Link>
       </div>
 
-      <div className="mt-12 flex flex-wrap justify-center items-center gap-8 text-sm text-muted-foreground">
-        <div className="flex items-center">
-          <div className="w-2 h-2 bg-primary rounded-full mr-2"></div>
+      <ul className="mt-12 flex flex-wrap justify-center items-center gap-8 text-sm text-muted-foreground">
+        <li className="flex items-center">
+          <span
+            className="w-2 h-2 bg-primary rounded-full mr-2"
+            aria-hidden="true"
+          />
           Free to start
-        </div>
-        <div className="flex items-center">
-          <div className="w-2 h-2 bg-primary rounded-full mr-2"></div>
+        </li>
+        <li className="flex items-center">
+          <span
+            className="w-2 h-2 bg-primary rounded-full mr-2"
+            aria-hidden="true"
+          />
           No credit card required
-        </div>
-        <div className="flex items-center">
-          <div className="w-2 h-2 bg-primary rounded-full mr-2"></div>
+        </li>
+        <li className="flex items-center">
+          <span
+            className="w-2 h-2 bg-primary rounded-full mr-2"
+            aria-hidden="true"
+          />
           Instant access
-        </div>
-      </div>
+        </li>
+      </ul>
     </div>
   );
 }
