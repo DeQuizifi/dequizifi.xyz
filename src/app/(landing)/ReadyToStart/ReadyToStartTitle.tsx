@@ -1,22 +1,30 @@
-import Header from "@/components/common/header";
-import { Sparkles } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
 export default function ReadyToStartTitle() {
   return (
-    <div className="mb-8 md:mb-12 lg:mb-16">
-      <Header
-        prelude={
-          <span className="flex items-center px-3 py-1.5 gap-1.5 text-sm font-medium rounded-full bg-sidebar-primary-foreground text-foreground border border-chart-2 shadow-sm hover:shadow-md transition-shadow duration-200">
-            <span className="text-primary">
-              <Sparkles className="w-4 h-4 md:w-5 md:h-5" aria-hidden />
-            </span>
-            <span className="sr-only">Ready to start</span>
-            <span aria-hidden>Ready to start your DeFi journey?</span>
-          </span>
-        }
-        title="Join thousands of DeFi learners today"
-        subtitle="Start your journey into decentralized finance with interactive quizzes, earn rewards, and become part of the most engaged crypto education community on Farcaster."
-      />
+    <div className="text-center mb-16">
+      <Badge
+        variant="secondary"
+        className="mb-4 px-4 py-2 text-sm font-medium glass-effect"
+      >
+        Ready to start
+      </Badge>
+
+      <h2 className="text-4xl md:text-5xl font-bold mb-6">
+        Join thousands of
+        <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          {" "}
+          DeFi learners{" "}
+        </span>
+        today
+      </h2>
+
+      <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+        Start your journey into decentralized finance with interactive quizzes,
+        earn rewards, and become part of the most engaged crypto education
+        community on Farcaster.
+      </p>
+      {/* TODO: CTA buttons will be placed here — implement primary "Start Learning Now" and secondary "Explore Platform" buttons */}
     </div>
   );
 }
