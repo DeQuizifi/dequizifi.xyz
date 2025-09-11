@@ -1,25 +1,6 @@
 import React from "react";
 import { Card } from "@/components/ui/card";
-
-export type Partnership = {
-  name: string;
-  category: string;
-};
-
-export const partnerships: Partnership[] = [
-  { name: "Ethereum", category: "Blockchain" },
-  { name: "Polygon", category: "Layer 2" },
-  { name: "Arbitrum", category: "Layer 2" },
-  { name: "Optimism", category: "Layer 2" },
-  { name: "Uniswap", category: "DeFi" },
-  { name: "Aave", category: "DeFi" },
-  { name: "Compound", category: "DeFi" },
-  { name: "1inch", category: "DeFi" },
-  { name: "Chainlink", category: "Infrastructure" },
-  { name: "The Graph", category: "Infrastructure" },
-  { name: "IPFS", category: "Infrastructure" },
-  { name: "Farcaster", category: "Social" },
-];
+import { Partnership } from "@/lib/data";
 
 export function PartnershipCard({ partner }: { partner: Partnership }) {
   return (

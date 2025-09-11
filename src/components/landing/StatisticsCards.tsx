@@ -1,5 +1,7 @@
 import React from "react";
 
+import { stats } from "@/lib/data";
+
 type IconComponent = React.ComponentType<React.SVGProps<SVGSVGElement>>;
 
 interface StatisticsCardProps {
@@ -43,43 +45,7 @@ export const StatisticsCard = React.memo(
 
 StatisticsCard.displayName = "StatisticsCard";
 
-// Move the stats data into this file so the cards are self-contained.
-export const stats: Array<{
-  number: string;
-  title: string;
-  description?: string;
-}> = [
-  {
-    number: "15,000+",
-    title: "Active Learners",
-    description: "Growing community of DeFi enthusiasts",
-  },
-  {
-    number: "200+",
-    title: "Interactive Quizzes",
-    description: "Covering all major DeFi protocols",
-  },
-  {
-    number: "85+",
-    title: "Unique Badges",
-    description: "Collectible achievements to unlock",
-  },
-  {
-    number: "1M+",
-    title: "Tokens Earned",
-    description: "Rewarded to our community",
-  },
-  {
-    number: "95%",
-    title: "Completion Rate",
-    description: "Students who finish courses",
-  },
-  {
-    number: "50+",
-    title: "Countries",
-    description: "Global DeFi education reach",
-  },
-];
+// stats imported from src/lib/data
 
 export default function StatisticsCards({
   icons,

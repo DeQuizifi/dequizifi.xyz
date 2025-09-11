@@ -2,9 +2,8 @@
 
 import React, { useMemo, useState } from "react";
 import { Badge } from "@/components/ui/badge";
-import PartnershipCards, {
-  partnerships,
-} from "@/components/landing/PartnershipCards";
+import PartnershipCards from "@/components/landing/PartnershipCards";
+import { partnerships } from "@/lib/data";
 
 const categories = [
   "All",
