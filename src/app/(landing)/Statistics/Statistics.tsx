@@ -1,54 +1,8 @@
 import React from "react";
-import { Badge } from "@/components/ui/badge";
-import StatisticsCard from "@/components/landing/StatisticsCard";
+import SectionBadge from "@/components/common/SectionBadge";
+import StatisticsCards from "@/components/landing/StatisticsCards";
 import { Users, BookOpen, Award, Coins, TrendingUp, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-type IconComponent = React.ComponentType<React.SVGProps<SVGSVGElement>>;
-
-const stats: Array<{
-  icon: IconComponent;
-  number: string;
-  title: string;
-  description?: string;
-}> = [
-  {
-    icon: Users,
-    number: "15,000+",
-    title: "Active Learners",
-    description: "Growing community of DeFi enthusiasts",
-  },
-  {
-    icon: BookOpen,
-    number: "200+",
-    title: "Interactive Quizzes",
-    description: "Covering all major DeFi protocols",
-  },
-  {
-    icon: Award,
-    number: "85+",
-    title: "Unique Badges",
-    description: "Collectible achievements to unlock",
-  },
-  {
-    icon: Coins,
-    number: "1M+",
-    title: "Tokens Earned",
-    description: "Rewarded to our community",
-  },
-  {
-    icon: TrendingUp,
-    number: "95%",
-    title: "Completion Rate",
-    description: "Students who finish courses",
-  },
-  {
-    icon: Globe,
-    number: "50+",
-    title: "Countries",
-    description: "Global DeFi education reach",
-  },
-];
 
 const Statistics: React.FC = () => {
   return (
@@ -60,19 +14,17 @@ const Statistics: React.FC = () => {
 
       <div className="mx-auto px-4 relative max-w-6xl">
         <div className="text-center mb-16">
-          <Badge
-            variant="secondary"
-            className="mb-6 px-4 py-2 text-sm font-medium bg-muted/60 text-muted-foreground rounded-full border-0"
-          >
-            Platform Metrics
-          </Badge>
+          <SectionBadge
+            text="Platform Metrics"
+            className="mb-6 px-4 py-2 text-sm font-medium bg-muted/60 text-muted-foreground border-0"
+          />
 
           <h2
             id="statistics-heading"
             className="text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 tracking-tight"
           >
             Powering DeFi Education{" "}
-            <span className="bg-gradient-to-r from-primary via-purple-500 to-primary bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary via-primary to-primary bg-clip-text text-transparent">
               Globally
             </span>
           </h2>
@@ -83,17 +35,16 @@ const Statistics: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16">
-          {stats.map((s, i) => (
-            <StatisticsCard
-              key={s.title + i}
-              icon={s.icon}
-              number={s.number}
-              title={s.title}
-              description={s.description}
-            />
-          ))}
-        </div>
+        <StatisticsCards
+          icons={{
+            "Active Learners": Users,
+            "Interactive Quizzes": BookOpen,
+            "Unique Badges": Award,
+            "Tokens Earned": Coins,
+            "Completion Rate": TrendingUp,
+            Countries: Globe,
+          }}
+        />
 
         {/* CTA intentionally removed per design — keep this area for future inline CTA if needed */}
         {/* CTA: Join button + caption */}
