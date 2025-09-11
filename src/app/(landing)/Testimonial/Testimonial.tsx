@@ -17,7 +17,7 @@ const Testimonial = () => {
     >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <Badge className="bg-about-badge-bg text-about-badge-text border-about-badge-text/20 px-4 py-2 text-sm font-medium mb-6 inline-flex items-center justify-center">
+          <Badge>
             <Quote className="w-4 h-4 mr-2" />
             What Our Community Says
           </Badge>
