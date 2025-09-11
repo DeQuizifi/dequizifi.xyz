@@ -1,36 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Quote } from "lucide-react";
-import TestimonialCard from "@/components/landing/TestimonialCard";
-
-const testimonials = [
-  {
-    quote:
-      "DeFi Academy transformed my understanding of yield farming and liquidity pools. The interactive quizzes made complex concepts crystal clear.",
-    name: "Alex Chen",
-    handle: "@alexbuilds",
-    role: "DeFi Developer",
-    badge: "Top Learner",
-    badgeStyle: "bg-purple-600/80 text-white",
-  },
-  {
-    quote:
-      "Finally, a platform that explains DeFi without the jargon. The gamification keeps me engaged and the rewards system is brilliant.",
-    name: "Sarah Martinez",
-    handle: "@sarahdefi",
-    role: "Crypto Analyst",
-    badge: "Quiz Master",
-    badgeStyle: "bg-purple-600/80 text-white",
-  },
-  {
-    quote:
-      "The Farcaster integration is seamless. I love earning badges and competing with my community while learning about DeFi protocols.",
-    name: "Jordan Kim",
-    handle: "@jordanweb3",
-    role: "Product Manager",
-    badge: "Community Leader",
-    badgeStyle: "bg-purple-600/80 text-white",
-  },
-];
+import TestimonialCards from "@/components/landing/TestimonialCards";
 
 const Testimonial = () => {
   return (
@@ -59,11 +29,7 @@ const Testimonial = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, i) => (
-            <TestimonialCard key={i} testimonial={testimonial} />
-          ))}
-        </div>
+        <TestimonialCards />
       </div>
     </section>
   );
