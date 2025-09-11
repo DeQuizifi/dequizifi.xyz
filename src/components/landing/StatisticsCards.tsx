@@ -1,6 +1,6 @@
 import React from "react";
 
-import { stats } from "@/lib/data";
+import { stats, StatTitle } from "@/lib/data";
 
 type IconComponent = React.ComponentType<React.SVGProps<SVGSVGElement>>;
 
@@ -50,7 +50,7 @@ StatisticsCard.displayName = "StatisticsCard";
 export default function StatisticsCards({
   icons,
 }: {
-  icons: Record<string, IconComponent>;
+  icons: Record<StatTitle, IconComponent>;
 }) {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16">

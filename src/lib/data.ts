@@ -1,10 +1,4 @@
-export type Stat = {
-  number: string;
-  title: string;
-  description?: string;
-};
-
-export const stats: Stat[] = [
+export const stats = [
   {
     number: "15,000+",
     title: "Active Learners",
@@ -35,7 +29,16 @@ export const stats: Stat[] = [
     title: "Countries",
     description: "Global DeFi education reach",
   },
-];
+] as const;
+
+export type Stat = (typeof stats)[number] & {
+  // widen any literal-only fields if consumers need mutable strings — keep as read-only by default
+  number: string;
+  title: string;
+  description?: string;
+};
+
+export type StatTitle = (typeof stats)[number]["title"];
 
 export type Testimonial = {
   quote: string;
