@@ -66,7 +66,7 @@ const Statistics: React.FC = () => {
             className="text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 tracking-tight"
           >
             Powering DeFi Education{" "}
-            <span className="bg-gradient-to-r from-primary via-purple-500 to-primary bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
               Globally
             </span>
           </h2>
@@ -108,6 +108,25 @@ const Statistics: React.FC = () => {
               </div>
             );
           })}
+        </div>
+
+        {/* CTA: Join button + caption */}
+        <div className="flex flex-col items-center mt-4 mb-12 relative">
+          {/* Subtle decorative gradient behind the button that uses theme tokens (no hardcoded colors) */}
+          <div className="pointer-events-none absolute -inset-x-20 -bottom-8 h-36 rounded-full blur-3xl bg-gradient-to-r from-primary/20 to-transparent opacity-60 dark:from-primary/30" />
+
+          <Button
+            variant="gradient"
+            size="lg"
+            className="z-10 inline-flex items-center gap-3 text-base lg:text-lg lg:px-8 lg:py-3"
+          >
+            <Users className="w-5 h-5 lg:w-6 lg:h-6" />
+            Join the Revolution
+          </Button>
+
+          <p className="text-sm lg:text-base text-muted-foreground mt-3 max-w-2xl text-center">
+            Be part of the next generation of DeFi learners and builders
+          </p>
         </div>
       </div>
     </section>
