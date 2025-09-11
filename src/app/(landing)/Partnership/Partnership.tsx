@@ -2,23 +2,9 @@
 
 import React, { useMemo, useState } from "react";
 import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
-
-// Minimal partnership data is kept only to calculate counts per category.
-const partnerships = [
-  { name: "Ethereum", category: "Blockchain" },
-  { name: "Polygon", category: "Layer 2" },
-  { name: "Arbitrum", category: "Layer 2" },
-  { name: "Optimism", category: "Layer 2" },
-  { name: "Uniswap", category: "DeFi" },
-  { name: "Aave", category: "DeFi" },
-  { name: "Compound", category: "DeFi" },
-  { name: "1inch", category: "DeFi" },
-  { name: "Chainlink", category: "Infrastructure" },
-  { name: "The Graph", category: "Infrastructure" },
-  { name: "IPFS", category: "Infrastructure" },
-  { name: "Farcaster", category: "Social" },
-];
+import PartnershipCards, {
+  partnerships,
+} from "@/components/landing/PartnershipCards";
 
 const categories = [
   "All",
@@ -96,29 +82,7 @@ const Partnership = () => {
         </div>
 
         {/* Partnerships Placeholder Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
-          {filtered.length === 0 ? (
-            <div className="col-span-full text-center text-sm text-muted-foreground">
-              No partners in this category yet.
-            </div>
-          ) : (
-            filtered.map((p) => (
-              <Card
-                key={p.name}
-                className="group relative p-6 text-center hover:shadow-card-hover transition-all duration-300 border-0 glass-effect"
-              >
-                <div className="text-3xl mb-3 text-muted-foreground">🔲</div>
-                <h3 className="font-semibold text-sm mb-1">
-                  Protocol Placeholder
-                </h3>
-                <p className="text-xs text-muted-foreground">
-                  Category: {p.category}
-                </p>
-                <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
-              </Card>
-            ))
-          )}
-        </div>
+        <PartnershipCards partners={filtered} />
 
         {/* Footer CTA showing counts */}
         <div className="text-center mt-10">
