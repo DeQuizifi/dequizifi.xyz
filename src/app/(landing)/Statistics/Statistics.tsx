@@ -2,6 +2,7 @@ import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Users, BookOpen, Award, Coins, TrendingUp, Globe } from "lucide-react";
+import StatisticsCard from "@/components/landing/StatisticsCard";
 
 const Statistics: React.FC = () => {
   const stats = [
@@ -80,33 +81,7 @@ const Statistics: React.FC = () => {
         {/* Statistics Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-16">
           {stats.map((stat, index) => {
-            const IconComponent = stat.icon;
-            return (
-              <div
-                key={index}
-                className="group relative p-8 rounded-2xl backdrop-blur-sm text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:bg-background/80"
-              >
-                {/* Icon */}
-                <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                  <IconComponent className="w-8 h-8 text-primary" />
-                </div>
-
-                {/* Number */}
-                <h3 className="text-3xl lg:text-4xl font-bold mb-3 text-primary">
-                  {stat.number}
-                </h3>
-
-                {/* Title */}
-                <h4 className="text-lg font-semibold mb-2 text-foreground">
-                  {stat.title}
-                </h4>
-
-                {/* Description */}
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {stat.description}
-                </p>
-              </div>
-            );
+            return <StatisticsCard key={index} stat={stat} />;
           })}
         </div>
 
