@@ -7,7 +7,7 @@ const Partnership = () => {
         <div className="text-center">
           <Badge
             variant="secondary"
-            className="mb-4 px-4 py-2 text-sm font-medium glass-effect"
+            className="mb-4 px-4 py-2 text-sm font-medium"
           >
             Trusted Ecosystem
           </Badge>
