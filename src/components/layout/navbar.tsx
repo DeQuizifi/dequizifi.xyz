@@ -63,7 +63,28 @@ const Navigation = () => {
 
   return (
     <>
-      <style>{sparkleKeyframes}</style>
+      <style>{`
+        ${sparkleKeyframes}
+        .nav-link-underline {
+          position: relative;
+          overflow: hidden;
+        }
+        .nav-link-underline::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 2px;
+          background: linear-gradient(90deg, var(--color-hero-gradient-from), var(--color-hero-gradient-to));
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+        }
+        .nav-link-underline:hover::after, .nav-link-underline:focus-visible::after {
+          transform: scaleX(1);
+        }
+      `}</style>
       <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-hero-gradient-from/80 to-hero-gradient-to/80 backdrop-blur-md border-b border-border/20">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
@@ -82,25 +103,25 @@ const Navigation = () => {
             <div className="hidden md:flex items-center space-x-8">
               <a
                 href="#features"
-                className="text-muted-foreground hover:text-foreground transition-colors"
+                className="text-muted-foreground hover:text-foreground transition-colors nav-link-underline"
               >
                 Features
               </a>
               <a
                 href="#testimonials"
-                className="text-muted-foreground hover:text-foreground transition-colors"
+                className="text-muted-foreground hover:text-foreground transition-colors nav-link-underline"
               >
                 Testimonials
               </a>
               <a
                 href="#stats"
-                className="text-muted-foreground hover:text-foreground transition-colors"
+                className="text-muted-foreground hover:text-foreground transition-colors nav-link-underline"
               >
                 Stats
               </a>
               <a
                 href="#faq"
-                className="text-muted-foreground hover:text-foreground transition-colors"
+                className="text-muted-foreground hover:text-foreground transition-colors nav-link-underline"
               >
                 FAQ
               </a>
@@ -140,30 +161,30 @@ const Navigation = () => {
             <div className="flex flex-col space-y-4">
               <a
                 href="#features"
-                className="text-foreground hover:text-foreground/80 transition-colors"
+                className="text-foreground hover:text-foreground/80 transition-colors nav-link-underline"
               >
                 Features
               </a>
               <a
                 href="#testimonials"
-                className="text-foreground hover:text-foreground/80 transition-colors"
+                className="text-foreground hover:text-foreground/80 transition-colors nav-link-underline"
               >
                 Testimonials
               </a>
               <a
                 href="#stats"
-                className="text-foreground hover:text-foreground/80 transition-colors"
+                className="text-foreground hover:text-foreground/80 transition-colors nav-link-underline"
               >
                 Stats
               </a>
               <a
                 href="#faq"
-                className="text-foreground hover:text-foreground/80 transition-colors"
+                className="text-foreground hover:text-foreground/80 transition-colors nav-link-underline"
               >
                 FAQ
               </a>
               <div className="flex flex-col space-y-2 pt-4">
-                <Button variant="ghost" size="sm">
+                <Button variant="outline" size="sm">
                   Sign In
                 </Button>
                 <Button variant="gradient" size="sm">
