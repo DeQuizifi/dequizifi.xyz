@@ -1,5 +1,6 @@
+import { Github, Heart, MessageCircle, Sparkles, Twitter } from "lucide-react";
+import Link from "next/link";
 import React from "react";
-import { Heart, Twitter, Github, MessageCircle, Sparkles } from "lucide-react";
 
 type NavItem = { label: string; href: string };
 
@@ -23,13 +24,13 @@ function NavColumn({ title, items }: { title: string; items: NavItem[] }) {
       <h3 className="font-semibold text-foreground text-base">{title}</h3>
       <nav className="space-y-3" aria-label={title}>
         {items.map((it) => (
-          <a
+          <Link
             key={it.label}
             href={it.href}
             className="block text-sm text-muted-foreground hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-colors duration-150"
           >
             {it.label}
-          </a>
+          </Link>
         ))}
       </nav>
     </div>
@@ -58,7 +59,7 @@ function SocialLinks() {
   return (
     <div className="flex items-center space-x-4 order-1 w-full sm:w-auto justify-start">
       {links.map((l) => (
-        <a
+        <Link
           key={l.label}
           href={l.href}
           title={l.label}
@@ -66,7 +67,7 @@ function SocialLinks() {
           className="text-muted-foreground hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-primary transition-colors duration-150"
         >
           {l.icon}
-        </a>
+        </Link>
       ))}
     </div>
   );
@@ -115,7 +116,7 @@ export default function Footer(): React.ReactElement {
 
             <div className="flex items-center space-x-1 text-sm text-muted-foreground order-2 w-full sm:w-auto justify-start">
               <span>© {year} DeQuiziFi. Built with</span>
-              <Heart className="w-4 h-4 fill-current" style={{ color: "var(--color-footer-heart)" }}/>
+              <Heart className="w-4 h-4 fill-current" style={{ color: "var(--color-footer-heart)" }} />
               <span>for the crypto community on DeQuiziFi.</span>
             </div>
           </div>
