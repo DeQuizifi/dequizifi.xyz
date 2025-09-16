@@ -1,6 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
-// import { Badge } from "@/components/ui/badge"; // removed for now
+import Link from "next/link";
 import { Menu, X, Sparkles } from "lucide-react";
 import { useState } from "react";
 
@@ -101,30 +101,18 @@ const Navigation = () => {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              <a
-                href="#features"
-                className="text-muted-foreground hover:text-foreground transition-colors nav-link-underline"
-              >
+              <Link href="#features" className="text-muted-foreground hover:text-foreground transition-colors nav-link-underline">
                 Features
-              </a>
-              <a
-                href="#testimonials"
-                className="text-muted-foreground hover:text-foreground transition-colors nav-link-underline"
-              >
+              </Link>
+              <Link href="#testimonials" className="text-muted-foreground hover:text-foreground transition-colors nav-link-underline">
                 Testimonials
-              </a>
-              <a
-                href="#stats"
-                className="text-muted-foreground hover:text-foreground transition-colors nav-link-underline"
-              >
+              </Link>
+              <Link href="#stats" className="text-muted-foreground hover:text-foreground transition-colors nav-link-underline">
                 Stats
-              </a>
-              <a
-                href="#faq"
-                className="text-muted-foreground hover:text-foreground transition-colors nav-link-underline"
-              >
+              </Link>
+              <Link href="#faq" className="text-muted-foreground hover:text-foreground transition-colors nav-link-underline">
                 FAQ
-              </a>
+              </Link>
               <Button variant="ghost" size="sm">
                 Sign In
               </Button>
@@ -159,30 +147,18 @@ const Navigation = () => {
         >
           <div className="container mx-auto px-4">
             <div className="flex flex-col space-y-4">
-              <a
-                href="#features"
-                className="text-foreground hover:text-foreground/80 transition-colors nav-link-underline"
-              >
+              <Link href="#features" className="text-foreground hover:text-foreground/80 transition-colors nav-link-underline">
                 Features
-              </a>
-              <a
-                href="#testimonials"
-                className="text-foreground hover:text-foreground/80 transition-colors nav-link-underline"
-              >
+              </Link>
+              <Link href="#testimonials" className="text-foreground hover:text-foreground/80 transition-colors nav-link-underline">
                 Testimonials
-              </a>
-              <a
-                href="#stats"
-                className="text-foreground hover:text-foreground/80 transition-colors nav-link-underline"
-              >
+              </Link>
+              <Link href="#stats" className="text-foreground hover:text-foreground/80 transition-colors nav-link-underline">
                 Stats
-              </a>
-              <a
-                href="#faq"
-                className="text-foreground hover:text-foreground/80 transition-colors nav-link-underline"
-              >
+              </Link>
+              <Link href="#faq" className="text-foreground hover:text-foreground/80 transition-colors nav-link-underline">
                 FAQ
-              </a>
+              </Link>
               <div className="flex flex-col space-y-2 pt-4">
                 <Button variant="outline" size="sm">
                   Sign In
