@@ -116,7 +116,7 @@ export default function Footer(): React.ReactElement {
 
             <div className="flex items-center space-x-1 text-sm text-muted-foreground order-2 w-full sm:w-auto justify-start">
               <span>© {year} DeQuiziFi. Built with</span>
-              <Heart className="w-4 h-4 fill-current" style={{ color: "var(--color-footer-heart)" }} />
+              <Heart className="w-4 h-4 fill-current" />
               <span>for the crypto community on DeQuiziFi.</span>
             </div>
           </div>

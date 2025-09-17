@@ -1,10 +1,5 @@
 import React from "react";
 
-const containerStyle: React.CSSProperties = {
-  background: "var(--color-cta-bg)",
-  border: "1px solid var(--color-cta-border)",
-};
-
 type CtaButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: "primary" | "secondary";
   "aria-label"?: string;
@@ -42,19 +37,16 @@ function CtaButton({
 export default function CTA() {
   return (
     <section
-      className="mx-4 sm:mx-auto mt-12 mb-8 max-w-3xl rounded-xl px-4 sm:px-8 py-10 text-center shadow-sm"
-      style={containerStyle}
+      className="mx-4 sm:mx-auto mt-12 mb-8 max-w-3xl rounded-xl px-4 sm:px-8 py-10 text-center shadow-sm bg-[var(--color-cta-bg)] border border-[var(--color-cta-border)]"
     >
       <h2
-        className="mb-3 text-2xl font-bold"
-        style={{ color: "var(--color-cta-title)" }}
+        className="mb-3 text-2xl font-bold text-[var(--color-cta-title)]"
       >
         Ready to Transform Your DeFi Knowledge?
       </h2>
 
       <p
-        className="mb-7 text-sm"
-        style={{ color: "var(--color-cta-description)" }}
+        className="mb-7 text-sm text-[var(--color-cta-description)]"
       >
         Join thousands of learners earning while mastering DeFi through the most
         beautiful quiz platform in crypto.
