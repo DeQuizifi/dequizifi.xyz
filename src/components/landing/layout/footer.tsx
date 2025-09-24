@@ -84,7 +84,7 @@ export default function Footer(): React.ReactElement {
   return (
     <footer
       aria-label="Site Footer"
-      className="bg-gradient-to-br from-background via-sidebar to-background border-t py-12 px-4 sm:py-20 sm:px-8 lg:px-12 shadowi-inner rounded-t-[4rem]"
+      className="bg-gradient-to-br from-background via-sidebar to-background border-t py-12 px-4 sm:py-20 sm:px-8 lg:px-12 shadow-inner rounded-t-[4rem]"
     >
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 lg:gap-16">
