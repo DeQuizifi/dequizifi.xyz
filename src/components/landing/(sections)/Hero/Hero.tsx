@@ -3,15 +3,18 @@ import SectionBadge from "@/components/common/SectionBadge";
 
 function HeroStat({ value, label }: { value: string; label: string }) {
   return (
-    <div className="text-center">
+    <div
+      className="relative flex flex-col items-center justify-center px-6 py-4 rounded-2xl backdrop-blur-sm bg-white/10 border border-border/40 shadow-inner transition-transform duration-200 hover:scale-105"
+    >
       <span
-        className="block text-2xl font-bold"
+        className="block text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-violet-600 via-blue-800 to-purple-400 text-transparent bg-clip-text drop-shadow-lg mb-1"
       >
         {value}
       </span>
-      <span className="text-sm">
+      <span className="text-base md:text-lg font-medium text-black/80 tracking-wide uppercase text-center">
         {label}
       </span>
+  <div className="absolute inset-0 pointer-events-none rounded-2xl border border-white/10" />
     </div>
   );
 }
@@ -46,7 +49,7 @@ export default function Hero() {
         </h2>
 
         <p
-          className="text-xl text-center max-w-2xl mb-8 mt-5"
+          className="text-xl text-center max-w-2xl mb-8 mt-5 text-black"
         >
           Master DeFi through engaging quizzes, earn tokens, collect badges, and
           join the most elegant crypto education platform built for the Farcaster
