@@ -1,4 +1,4 @@
-import HowItWorksCard from "@/components/landing/HowItWorksCard";
+import HowItWorksCard from "@/components/landing/(sections)/HowItWorks/HowItWorksCard";
 import { Badge } from "@/components/ui/badge";
 import { BookOpen, Trophy, Users, Zap } from "lucide-react";
 import React from "react";

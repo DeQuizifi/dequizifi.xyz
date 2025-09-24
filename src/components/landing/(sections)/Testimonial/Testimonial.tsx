@@ -1,5 +1,5 @@
 import SectionBadge from "@/components/common/SectionBadge";
-import TestimonialCards from "@/components/landing/TestimonialCards";
+import TestimonialCards from "@/components/landing/(sections)/Testimonial/TestimonialCards";
 import { Quote } from "lucide-react";
 
 const Testimonial = () => {
