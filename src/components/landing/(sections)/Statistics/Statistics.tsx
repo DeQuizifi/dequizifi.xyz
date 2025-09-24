@@ -1,6 +1,6 @@
 import React from "react";
 import SectionBadge from "@/components/common/SectionBadge";
-import StatisticsCards from "@/components/landing/StatisticsCards";
+import StatisticsCards from "@/components/landing/(sections)/Statistics/StatisticsCards";
 import { Users, BookOpen, Award, Coins, TrendingUp, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
