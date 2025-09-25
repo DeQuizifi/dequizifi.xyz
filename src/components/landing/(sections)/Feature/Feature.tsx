@@ -1,102 +1,40 @@
 import React from "react";
+
 import CustomCard from "@/components/common/CustomCard";
-import type { CustomCardProps } from "@/components/common/CustomCard";
 import Header from "@/components/common/header";
-import Footer from "@/components/common/featureFooter";
-import { Star, GraduationCap, Trophy, Zap, Users } from "lucide-react";
+import { Star } from "lucide-react";
+import FEATURE_CARDS from "./featureCards";
+import FEATURE_HIGHLIGHTS from "./featureHighlights";
+export type IconComponent = React.ComponentType<React.SVGProps<SVGSVGElement>>;
 
-type IconComponent = React.ComponentType<React.SVGProps<SVGSVGElement>>;
-
-interface FooterItem {
-  title: string;
-  subtitle: string;
-  IconComponent: IconComponent;
-}
-
-const FOOTERS: FooterItem[] = [
-  {
-    title: "Expert Content",
-    subtitle: "Curated by DeFi professionals",
-    IconComponent: GraduationCap,
-  },
-  {
-    title: "Achievement System",
-    subtitle: "Unlock badges and milestones",
-    IconComponent: Trophy,
-  },
-  {
-    title: "Real-time Rewards",
-    subtitle: "Instant token distribution",
-    IconComponent: Zap,
-  },
-  {
-    title: "Farcaster Native",
-    subtitle: "Built for crypto-social",
-    IconComponent: Users,
-  },
-];
-
-const FEATURE_CARDS: ReadonlyArray<CustomCardProps> = [
-  {
-    icon: "Brain",
-    buttonlabel: "Learn",
-    title: "Deep DeFi Learning",
-    description:
-      "Master protocols, strategies, and concepts through interactive quizzes with real-time knowledge updates.",
-    features: [
-      "Interactive quizzes",
-      "Real-time knowledge updates",
-      "Comprehensive protocol coverage",
-    ],
-  },
-  {
-    icon: "Lightbulb",
-    buttonlabel: "Earn",
-    title: "Multiple Earning Loops",
-    description:
-      "Earn tokens for correct answers, trade achievement badges, and participate in revenue-sharing quizzes.",
-    features: ["Token Rewards", "Badge Trading", "Revenue Share"],
-  },
-  {
-    icon: "Share2",
-    buttonlabel: "Connect",
-    title: "Social Learning",
-    description:
-      "Join leaderboards, collect badges, challenge friends, and learn together in the Farcaster community.",
-    features: ["Leaderboards", "Multiplayer", "Community"],
-  },
-];
 
 export default function Feature(): React.ReactElement {
   return (
     <section
       aria-labelledby="features-heading"
-      className="overflow-x-hidden min-h-screen py-8 md:py-12 lg:py-16"
+      className="overflow-x-hidden min-h-screen py-12 md:py-16 lg:py-20 bg-background"
     >
       <h2 id="features-heading" className="sr-only">
         Core Features
       </h2>
-      <div className="w-full flex justify-center mb-6 md:mb-8">
-        <span className="flex items-center px-3 py-1.5 gap-1.5 text-sm font-medium rounded-full bg-sidebar-primary-foreground text-foreground border border-chart-2 shadow-sm hover:shadow-md transition-shadow duration-200">
-          <span className="text-primary">
-            <Star className="w-4 h-4 md:w-5 md:h-5" aria-hidden />
-          </span>
-          <span className="sr-only">Core Features</span>
+      <div className="w-full flex justify-center mb-10">
+        <span className="flex items-center px-4 py-2 gap-2 text-base font-semibold rounded-full bg-muted text-foreground border border-border shadow-sm">
+          <Star className="w-5 h-5 text-primary" aria-hidden />
           <span aria-hidden>Core Features</span>
         </span>
       </div>
 
-      <div className="mb-8 md:mb-12 lg:mb-16">
+      <div className="mb-12 md:mb-16 lg:mb-20 text-center">
         <Header
           title="Studio-Grade Experience"
           subtitle="Every detail crafted for the modern crypto learner who values both substance and style."
         />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 md:mb-16 lg:mb-20">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10 justify-items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
           {FEATURE_CARDS.map((card) => (
-            <div key={card.title} className="w-full max-w-sm lg:max-w-none">
+            <div key={card.title} className="w-full max-w-md">
               <CustomCard {...card} />
             </div>
           ))}
@@ -104,14 +42,14 @@ export default function Feature(): React.ReactElement {
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 lg:gap-16 justify-items-center">
-          {FOOTERS.map((f) => (
-            <div key={f.title} className="w-full">
-              <Footer
-                title={f.title}
-                subtitle={f.subtitle}
-                IconComponent={f.IconComponent}
-              />
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 justify-items-center">
+          {FEATURE_HIGHLIGHTS.map((highlight) => (
+            <div key={highlight.title} className="w-full flex flex-col items-center text-center p-6 rounded-xl border bg-white shadow-sm">
+              <span className="mb-3">
+                <highlight.IconComponent className="w-8 h-8 text-primary" aria-hidden />
+              </span>
+              <h3 className="font-semibold text-lg mb-1">{highlight.title}</h3>
+              <p className="text-muted-foreground text-sm">{highlight.subtitle}</p>
             </div>
           ))}
         </div>
