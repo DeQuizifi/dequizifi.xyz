@@ -1,3 +1,4 @@
+'use client'
 import { Github, Heart, MessageCircle, Sparkles, Twitter } from "lucide-react";
 import Link from "next/link";
 import React from "react";
@@ -82,45 +83,61 @@ export default function Footer(): React.ReactElement {
   const year = new Date().getFullYear();
 
   return (
-    <footer
-      aria-label="Site Footer"
-      className="bg-gradient-to-br from-background via-sidebar to-background border-t py-12 px-4 sm:py-20 sm:px-8 lg:px-12 shadow-inner rounded-t-[4rem]"
-    >
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 lg:gap-16">
-          <div className="md:col-span-2 flex flex-col gap-6">
-            <div className="flex items-center gap-4">
-                <span
-                  className="text-4xl font-extrabold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent tracking-tight animate-fade-in font-[cursive]"
-                  style={{ fontFamily: '"Pacifico", "Dancing Script", "Great Vibes", cursive' }}
-                >
-                  DeQuiziFi
-                </span>
-            </div>
-
-            <p className="text-muted-foreground/90 text-base leading-relaxed max-w-lg animate-fade-in">
-              The most elegant DeFi education platform built for the Farcaster community. Learn, earn, and connect through beautiful quiz experiences on DeQuiziFi.
-            </p>
-          </div>
-
-          <NavColumn title="Platform" items={PLATFORM} />
-          <NavColumn title="Community" items={COMMUNITY} />
-        </div>
-
-        <div className="mt-14 pt-8 border-t border-border animate-fade-in">
-          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
-            <SocialLinks />
-
-            <div className="flex items-center gap-2 text-sm text-muted-foreground order-2 w-full sm:w-auto justify-start">
-              <span>© {year} DeQuiziFi. Built with</span>
-              <span className="inline-flex items-center">
-                <Heart className="w-4 h-4 fill-primary text-primary animate-pulse mx-1" />
-              </span>
-              <span>for the crypto community on DeQuiziFi.</span>
-            </div>
-          </div>
-        </div>
+    <div className="relative w-full">
+      <div className="absolute inset-0 z-0 pointer-events-none select-none overflow-hidden">
+        {/* Circle */}
+        <div className="absolute left-10 bottom-10 w-32 h-32 rounded-full bg-gradient-to-tr from-primary/40 to-secondary/30 animate-pulse" />
+        {/* Square */}
+        <div className="absolute right-20 top-1 w-24 h-24 bg-gradient-to-br from-secondary/40 to-primary/30 rounded-xl rotate-12 animate-pulse" />
       </div>
-    </footer>
+
+      <footer
+        aria-label="Site Footer"
+        className="relative z-10 bg-white/10 backdrop-blur-sm border-t py-12 px-4 sm:py-20 sm:px-8 lg:px-12 shadow-inner rounded-t-[4rem]"
+      >
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-10 lg:gap-16">
+            <div className="md:col-span-2 flex flex-col gap-6">
+              <div className="flex items-center gap-4">
+                  <span
+                    className="text-4xl font-extrabold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent tracking-tight animate-fade-in font-[cursive]"
+                    style={{ fontFamily: '"Pacifico", "Dancing Script", "Great Vibes", cursive' }}
+                  >
+                    DeQuiziFi
+                  </span>
+              </div>
+
+              <p className="text-muted-foreground/90 text-base leading-relaxed max-w-lg animate-fade-in">
+                The most elegant DeFi education platform built for the Farcaster community. Learn, earn, and connect through beautiful quiz experiences on DeQuiziFi.
+              </p>
+            </div>
+
+            <NavColumn title="Platform" items={PLATFORM} />
+            <NavColumn title="Community" items={COMMUNITY} />
+          </div>
+
+          <div className="mt-14 pt-8 border-t border-border animate-fade-in">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
+              <SocialLinks />
+
+              <div className="flex items-center gap-2 text-sm text-muted-foreground order-2 w-full sm:w-auto justify-start">
+                <span>© {year} DeQuiziFi. Built with</span>
+                <span className="inline-flex items-center">
+                  <Heart className="w-4 h-4 fill-primary text-primary animate-pulse mx-1" />
+                </span>
+                <span>for the crypto community on DeQuiziFi.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      {/* Hexagon clip-path utility (can be moved to CSS file) */}
+      <style jsx>{`
+        .clip-hexagon {
+          clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%);
+        }
+      `}</style>
+    </div>
   );
 }
