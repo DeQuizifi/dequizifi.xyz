@@ -85,7 +85,7 @@ const Navigation = () => {
           transform: scaleX(1);
         }
       `}</style>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-hero-gradient-from/80 to-hero-gradient-to/80 backdrop-blur-md border-b border-border/20">
+      <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b border-border/20">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
@@ -101,24 +101,24 @@ const Navigation = () => {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              <Link href="#features" className="text-muted-foreground hover:text-foreground transition-colors nav-link-underline">
+              <Link href="#features" className="text-foreground hover:text-primary hover:scale-105 hover:font-bold duration-300">
                 Features
               </Link>
-              <Link href="#testimonials" className="text-muted-foreground hover:text-foreground transition-colors nav-link-underline">
+              <Link href="#testimonials" className="text-foreground hover:text-primary hover:scale-105 hover:font-bold duration-300">
                 Testimonials
               </Link>
-              <Link href="#stats" className="text-muted-foreground hover:text-foreground transition-colors nav-link-underline">
+              <Link href="#stats" className="text-foreground hover:text-primary hover:scale-105 hover:font-bold duration-300">
                 Stats
               </Link>
-              <Link href="#faq" className="text-muted-foreground hover:text-foreground transition-colors nav-link-underline">
+              <Link href="#faq" className="text-foreground hover:text-primary hover:scale-105 hover:font-bold duration-300">
                 FAQ
               </Link>
-              <Button variant="ghost" size="sm">
+              <Button variant="outline">
                 Sign In
               </Button>
-              <button className="font-semibold px-4 py-2 rounded-xl shadow-lg transition-transform duration-200 bg-gradient-to-r from-[var(--color-hero-gradient-from)] to-[var(--color-hero-gradient-to)] text-background hover:scale-105 hover:shadow-xl hover:opacity-90 text-sm whitespace-nowrap">
+              <Button>
                 Get Started
-              </button>
+                </Button>
             </div>
 
             {/* Mobile menu button */}
