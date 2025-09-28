@@ -1,1 +1,35 @@
-<svg id="visual" viewBox="0 0 900 600" width="900" height="600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><rect x="0" y="0" width="900" height="600" fill="#e9bffc"></rect><defs><linearGradient id="grad1_0" x1="33.3%" y1="0%" x2="100%" y2="100%"><stop offset="20%" stop-color="#eb83fd" stop-opacity="1"></stop><stop offset="80%" stop-color="#eb83fd" stop-opacity="1"></stop></linearGradient></defs><defs><linearGradient id="grad1_1" x1="33.3%" y1="0%" x2="100%" y2="100%"><stop offset="20%" stop-color="#eb83fd" stop-opacity="1"></stop><stop offset="80%" stop-color="#e9bffc" stop-opacity="1"></stop></linearGradient></defs><defs><linearGradient id="grad2_0" x1="0%" y1="0%" x2="66.7%" y2="100%"><stop offset="20%" stop-color="#eb83fd" stop-opacity="1"></stop><stop offset="80%" stop-color="#eb83fd" stop-opacity="1"></stop></linearGradient></defs><defs><linearGradient id="grad2_1" x1="0%" y1="0%" x2="66.7%" y2="100%"><stop offset="20%" stop-color="#e9bffc" stop-opacity="1"></stop><stop offset="80%" stop-color="#eb83fd" stop-opacity="1"></stop></linearGradient></defs><g transform="translate(900, 0)"><path d="M0 459.7C-52.6 452 -105.2 444.2 -132.6 408C-159.9 371.8 -162 307.1 -209.3 288C-256.5 268.9 -348.8 295.4 -371.9 270.2C-395 245 -348.8 168 -351.9 114.3C-355 60.7 -407.3 30.3 -459.7 0L0 0Z" fill="#e9a3fe"></path><path d="M0 229.9C-26.3 226 -52.6 222.1 -66.3 204C-80 185.9 -81 153.5 -104.6 144C-128.2 134.5 -174.4 147.7 -186 135.1C-197.5 122.5 -174.4 84 -175.9 57.2C-177.5 30.3 -203.7 15.2 -229.9 0L0 0Z" fill="#eb83fd"></path></g><g transform="translate(0, 600)"><path d="M0 -459.7C43.8 -440.8 87.6 -421.9 133.2 -409.9C178.8 -397.9 226.1 -392.9 270.2 -371.9C314.3 -350.9 355.2 -314 370.5 -269.2C385.8 -224.4 375.5 -171.6 386.1 -125.5C396.7 -79.3 428.2 -39.6 459.7 0L0 0Z" fill="#e9a3fe"></path><path d="M0 -229.9C21.9 -220.4 43.8 -210.9 66.6 -205C89.4 -199 113 -196.4 135.1 -186C157.2 -175.5 177.6 -157 185.3 -134.6C192.9 -112.2 187.8 -85.8 193.1 -62.7C198.4 -39.6 214.1 -19.8 229.9 0L0 0Z" fill="#eb83fd"></path></g></svg>
+<svg id="visual" viewBox="0 0 900 600" width="900" height="600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+	<rect x="0" y="0" width="900" height="600" fill="oklch(1 0 0)"></rect>
+	<defs>
+		<linearGradient id="grad1_0" x1="33.3%" y1="0%" x2="100%" y2="100%">
+			<stop offset="20%" stop-color="oklch(0.606 0.25 292.717)" stop-opacity="1"></stop>
+			<stop offset="80%" stop-color="oklch(0.606 0.25 292.717)" stop-opacity="1"></stop>
+		</linearGradient>
+	</defs>
+	<defs>
+		<linearGradient id="grad1_1" x1="33.3%" y1="0%" x2="100%" y2="100%">
+			<stop offset="20%" stop-color="oklch(0.606 0.25 292.717)" stop-opacity="1"></stop>
+			<stop offset="80%" stop-color="oklch(1 0 0)" stop-opacity="1"></stop>
+		</linearGradient>
+	</defs>
+	<defs>
+		<linearGradient id="grad2_0" x1="0%" y1="0%" x2="66.7%" y2="100%">
+			<stop offset="20%" stop-color="oklch(0.606 0.25 292.717)" stop-opacity="1"></stop>
+			<stop offset="80%" stop-color="oklch(0.606 0.25 292.717)" stop-opacity="1"></stop>
+		</linearGradient>
+	</defs>
+	<defs>
+		<linearGradient id="grad2_1" x1="0%" y1="0%" x2="66.7%" y2="100%">
+			<stop offset="20%" stop-color="oklch(1 0 0)" stop-opacity="1"></stop>
+			<stop offset="80%" stop-color="oklch(0.606 0.25 292.717)" stop-opacity="1"></stop>
+		</linearGradient>
+	</defs>
+	<g transform="translate(900, 0)">
+		<path d="M0 459.7C-52.6 452 -105.2 444.2 -132.6 408C-159.9 371.8 -162 307.1 -209.3 288C-256.5 268.9 -348.8 295.4 -371.9 270.2C-395 245 -348.8 168 -351.9 114.3C-355 60.7 -407.3 30.3 -459.7 0L0 0Z" fill="oklch(0.967 0.001 286.375)"></path>
+		<path d="M0 229.9C-26.3 226 -52.6 222.1 -66.3 204C-80 185.9 -81 153.5 -104.6 144C-128.2 134.5 -174.4 147.7 -186 135.1C-197.5 122.5 -174.4 84 -175.9 57.2C-177.5 30.3 -203.7 15.2 -229.9 0L0 0Z" fill="oklch(0.606 0.25 292.717)"></path>
+	</g>
+	<g transform="translate(0, 600)">
+		<path d="M0 -459.7C43.8 -440.8 87.6 -421.9 133.2 -409.9C178.8 -397.9 226.1 -392.9 270.2 -371.9C314.3 -350.9 355.2 -314 370.5 -269.2C385.8 -224.4 375.5 -171.6 386.1 -125.5C396.7 -79.3 428.2 -39.6 459.7 0L0 0Z" fill="oklch(0.967 0.001 286.375)"></path>
+		<path d="M0 -229.9C21.9 -220.4 43.8 -210.9 66.6 -205C89.4 -199 113 -196.4 135.1 -186C157.2 -175.5 177.6 -157 185.3 -134.6C192.9 -112.2 187.8 -85.8 193.1 -62.7C198.4 -39.6 214.1 -19.8 229.9 0L0 0Z" fill="oklch(0.606 0.25 292.717)"></path>
+	</g>
+</svg>
