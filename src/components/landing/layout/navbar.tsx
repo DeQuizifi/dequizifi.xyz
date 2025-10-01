@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Menu, X, Sparkles } from "lucide-react";
 import { useState } from "react";
+import {Logo} from "./logo";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -96,7 +97,7 @@ const Navigation = () => {
                   aria-hidden="true"
                 />
               </div>
-              <h1 className="text-xl font-bold text-foreground">DeQuiziFi</h1>
+              <Logo variant="small" />
             </div>
 
             {/* Desktop Navigation */}
@@ -116,9 +117,9 @@ const Navigation = () => {
               <Button variant="outline">
                 Sign In
               </Button>
-              <Button>
+              <Button className="border">
                 Get Started
-                </Button>
+              </Button>
             </div>
 
             {/* Mobile menu button */}
