@@ -2,6 +2,7 @@
 import { Github, Heart, MessageCircle, Sparkles, Twitter } from "lucide-react";
 import Link from "next/link";
 import React from "react";
+import {Logo} from "./logo";
 
 type NavItem = { label: string; href: string };
 
@@ -30,10 +31,9 @@ function NavColumn({ title, items }: { title: string; items: NavItem[] }) {
           <Link
             key={it.label}
             href={it.href}
-            className="relative group text-sm font-medium text-muted-foreground transition-colors duration-200 py-1 px-2 rounded-md hover:bg-gradient-to-r hover:from-primary/10 hover:to-secondary/10 hover:text-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            className="relative group text-sm font-medium text-muted-foreground transition-colors duration-300 py-1 px-2 rounded-md hover:text-primary focus:outline-none hover:font-bold"
           >
-            <span className="transition-all duration-200 group-hover:pl-2">{it.label}</span>
-            <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+            <span className="transition-all duration-300 group-hover:pl-2">{it.label}</span>
           </Link>
         ))}
       </nav>
@@ -99,12 +99,7 @@ export default function Footer(): React.ReactElement {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-10 lg:gap-16">
             <div className="md:col-span-2 flex flex-col gap-6">
               <div className="flex items-center gap-4">
-                  <span
-                    className="text-4xl font-extrabold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent tracking-tight animate-fade-in font-[cursive]"
-                    style={{ fontFamily: '"Pacifico", "Dancing Script", "Great Vibes", cursive' }}
-                  >
-                    DeQuiziFi
-                  </span>
+                  <Logo variant="big" />
               </div>
 
               <p className="text-muted-foreground/90 text-base leading-relaxed max-w-lg animate-fade-in">
