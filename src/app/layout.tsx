@@ -1,16 +1,11 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Orbitron } from "next/font/google";
 import "@/styles/globals.css";
 import Footer from "@/components/landing/layout/footer";
 import Navigation from "@/components/landing/layout/navbar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const orbitron = Orbitron({
+  variable: "--font-orbitron",
   subsets: ["latin"],
 });
 
@@ -56,8 +51,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      ><Navigation/>
+        className={`${orbitron.variable} antialiased`}
+        style={{ fontFamily: 'Orbitron, sans-serif' }}
+      >
+        <Navigation/>
         {children}
         <Footer />
       </body>
