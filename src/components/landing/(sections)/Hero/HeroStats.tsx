@@ -2,7 +2,7 @@ import { Card } from "@/components/ui/card";
 
 function StatCard({ value, label }: { value: string; label: string }) {
   return (
-    <Card className="relative flex flex-col items-center justify-center px-6 py-4 rounded-2xl backdrop-blur-sm bg-white/10 border border-border/40 shadow-inner transition-transform duration-200 hover:scale-105 animate-float">
+    <Card className="relative flex flex-col items-center justify-center px-6 py-4 rounded-2xl backdrop-blur-sm bg-white/10 border border-border shadow-inner transition-transform duration-200 hover:scale-105 animate-float">
       <span className="block text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-violet-600 via-blue-800 to-purple-400 text-transparent bg-clip-text drop-shadow-lg mb-1 animate-gradientX">
         {value}
       </span>
