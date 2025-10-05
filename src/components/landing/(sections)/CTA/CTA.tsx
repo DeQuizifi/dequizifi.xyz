@@ -1,67 +1,34 @@
 import React from "react";
-
-type CtaButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant?: "primary" | "secondary";
-  "aria-label"?: string;
-};
-
-function CtaButton({
-  children,
-  variant = "primary",
-  "aria-label": ariaLabel,
-  onClick,
-  ...rest
-}: CtaButtonProps) {
-  const base =
-    "rounded-md px-6 py-2 font-medium shadow-md transition-transform duration-200 ease-in-out";
-  const variants: Record<Required<CtaButtonProps>["variant"], string> = {
-    primary:
-      "bg-[var(--color-cta-primary-bg)] text-[var(--color-cta-primary-text)] hover:bg-[var(--color-cta-primary-hover-bg)]",
-    secondary:
-      "bg-[var(--color-cta-secondary-bg)] text-[var(--color-cta-secondary-text)] border-[1px] border-[var(--color-cta-secondary-border)] hover:bg-[var(--color-cta-secondary-hover-bg)]",
-  };
-
-  return (
-    <button
-      type="button"
-      className={`${base} ${variants[variant]} hover:scale-105`}
-      aria-label={ariaLabel}
-      onClick={onClick}
-      {...rest}
-    >
-      {children}
-    </button>
-  );
-}
-
+import { Button } from "@/components/ui/button";
 export default function CTA() {
   return (
     <section
-      className="mx-4 sm:mx-auto mt-12 mb-8 max-w-3xl rounded-xl px-4 sm:px-8 py-10 text-center shadow-sm bg-[var(--color-cta-bg)] border border-[var(--color-cta-border)]"
+      className="mx-4 sm:mx-auto mt-16 mb-12 max-w-3xl rounded-2xl px-6 sm:px-12 py-12 text-center shadow-lg border border-gray-200 bg-white/80 backdrop-blur-lg relative overflow-hidden"
     >
-      <h2
-        className="mb-3 text-2xl font-bold text-[var(--color-cta-title)]"
-      >
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-72 h-32 bg-gradient-to-r from-primary/70 via-accent/10 to-primary/20 blur-2xl opacity-40" />
+        <div className="absolute -bottom-10 right-1/2 translate-x-1/2 w-72 h-32 bg-gradient-to-r from-primary/20 via-accent/10 to-primary/20 blur-2xl opacity-30" />
+      </div>
+
+      <h2 className="mb-4 text-3xl font-extrabold tracking-tight text-gray-900">
         Ready to Transform Your DeFi Knowledge?
       </h2>
 
-      <p
-        className="mb-7 text-sm text-[var(--color-cta-description)]"
-      >
-        Join thousands of learners earning while mastering DeFi through the most
-        beautiful quiz platform in crypto.
+      <p className="mb-8 text-base text-gray-700 max-w-xl mx-auto leading-relaxed">
+        Join thousands of learners earning while mastering DeFi through the most beautiful quiz platform in crypto.
       </p>
 
-      <div className="flex justify-center gap-4">
-        <CtaButton aria-label="Get Started Now - Begin learning DeFi">
+      <div className="flex flex-col sm:flex-row justify-center gap-4">
+        <Button size="lg" className="px-8 py-3 text-base font-semibold shadow-md hover:scale-105 transition-transform">
           Get Started Now
-        </CtaButton>
-        <CtaButton
+        </Button>
+        <Button
           variant="secondary"
-          aria-label="View Demo - Preview the quiz platform"
+          size="lg"
+          className="px-8 py-3 text-base font-semibold border-gray-300 shadow hover:scale-105 transition-transform"
         >
           View Demo
-        </CtaButton>
+        </Button>
       </div>
     </section>
   );
