@@ -1,71 +1,18 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Menu, X, Sparkles } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import {Logo} from "./logo";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Create keyframes for sparkle animation
-  const sparkleKeyframes = `
-    @keyframes sparkleRotate {
-      0%, 25% { 
-        transform: rotate(0deg); 
-        filter: drop-shadow(0 0 0 transparent); 
-      }
-      35% { 
-        transform: rotate(90deg); 
-        filter: drop-shadow(0 0 2px currentColor); 
-      }
-      45% { 
-        transform: rotate(180deg); 
-        filter: drop-shadow(0 0 3px currentColor); 
-      }
-      55% { 
-        transform: rotate(270deg); 
-        filter: drop-shadow(0 0 2px currentColor); 
-      }
-      65%, 75% { 
-        transform: rotate(360deg); 
-        filter: drop-shadow(0 0 1px currentColor); 
-      }
-      80% { 
-        transform: rotate(270deg); 
-        filter: drop-shadow(0 0 2px currentColor); 
-      }
-      85% { 
-        transform: rotate(180deg); 
-        filter: drop-shadow(0 0 3px currentColor); 
-      }
-      90% { 
-        transform: rotate(90deg); 
-        filter: drop-shadow(0 0 2px currentColor); 
-      }
-      95% { 
-        transform: rotate(45deg); 
-        filter: drop-shadow(0 0 1px currentColor); 
-      }
-      100% { 
-        transform: rotate(0deg); 
-        filter: drop-shadow(0 0 0 transparent); 
-      }
-    }
-    .sparkle-animated {
-      animation: sparkleRotate 12s linear infinite;
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .sparkle-animated {
-        animation: none !important;
-      }
-    }
-  `;
+
 
   return (
     <>
       <style>{`
-        ${sparkleKeyframes}
         .nav-link-underline {
           position: relative;
           overflow: hidden;
@@ -90,15 +37,7 @@ const Navigation = () => {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <div className="flex items-center space-x-3">
-              <div className="p-0 bg-transparent">
-                <Sparkles
-                  className="w-6 h-6 text-primary origin-center sparkle-animated"
-                  aria-hidden="true"
-                />
-              </div>
-              <Logo variant="small" />
-            </div>
+
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
